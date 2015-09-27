@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1169C1671BB0554A002306C4 /* StationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1169C1661BB0554A002306C4 /* StationService.m */; settings = {ASSET_TAGS = (); }; };
+		1169C16B1BB05EF7002306C4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1169C16A1BB05EF7002306C4 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1169C16F1BB06111002306C4 /* StationListTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1169C16E1BB06111002306C4 /* StationListTableViewTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1169C1731BB061DF002306C4 /* StationListCustomCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1169C1721BB061DE002306C4 /* StationListCustomCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		1199EBEF1BB6EC2400871F7D /* UserManagementService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1199EBEE1BB6EC2400871F7D /* UserManagementService.m */; settings = {ASSET_TAGS = (); }; };
+		1199EBF21BB6F93F00871F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1199EBF11BB6F93F00871F7D /* User.m */; settings = {ASSET_TAGS = (); }; };
+		1199EBF51BB6FE0800871F7D /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1199EBF41BB6FE0800871F7D /* UserAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D3F1BB8233300C6145E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 11A02D3E1BB8233300C6145E /* Podfile */; settings = {ASSET_TAGS = (); }; };
+		11A02D621BB8250900C6145E /* MZBlurEffectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D561BB8250900C6145E /* MZBlurEffectAdapter.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D631BB8250900C6145E /* MZFormSheetPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D591BB8250900C6145E /* MZFormSheetPresentationController.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D641BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D5B1BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D651BB8250900C6145E /* MZFormSheetPresentationControllerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D5D1BB8250900C6145E /* MZFormSheetPresentationControllerSegue.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D661BB8250900C6145E /* MZTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D5F1BB8250900C6145E /* MZTransition.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D671BB8250900C6145E /* UIViewController+TargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D611BB8250900C6145E /* UIViewController+TargetViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D6A1BB82A7000C6145E /* SignOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A02D691BB82A7000C6145E /* SignOutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11A02D6C1BB85F6400C6145E /* launchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A02D6B1BB85F6400C6145E /* launchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		11A987C71BADFC2200426C65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A987C61BADFC2200426C65 /* main.m */; };
+		11A987CA1BADFC2200426C65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A987C91BADFC2200426C65 /* AppDelegate.m */; };
+		11A987CD1BADFC2200426C65 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A987CC1BADFC2200426C65 /* MainViewController.m */; };
+		11A987D01BADFC2200426C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A987CE1BADFC2200426C65 /* Main.storyboard */; };
+		11A987D21BADFC2200426C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A987D11BADFC2200426C65 /* Images.xcassets */; };
+		11A987E11BADFC2200426C65 /* BikeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A987E01BADFC2200426C65 /* BikeMeTests.m */; };
+		11A987EB1BADFDBD00426C65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A987EA1BADFDBD00426C65 /* MapKit.framework */; };
+		11B25B951BB6AC700033ADB4 /* SignInControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B25B941BB6AC700033ADB4 /* SignInControllerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11B7015D1BAEC45800BBFE8D /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7015C1BAEC45800BBFE8D /* NavigationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11B701611BAECAA400BBFE8D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B701601BAECAA400BBFE8D /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11B701641BAECEAD00BBFE8D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B701631BAECEAD00BBFE8D /* Configuration.m */; settings = {ASSET_TAGS = (); }; };
+		11B701681BAED13700BBFE8D /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B701671BAED13700BBFE8D /* Station.m */; settings = {ASSET_TAGS = (); }; };
+		11B7016B1BAED2AD00BBFE8D /* Bike.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7016A1BAED2AD00BBFE8D /* Bike.m */; settings = {ASSET_TAGS = (); }; };
+		11B7016F1BAEF15F00BBFE8D /* ConnectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7016E1BAEF15F00BBFE8D /* ConnectionHelper.m */; settings = {ASSET_TAGS = (); }; };
+		11EB26951BB6CF8A00483182 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB26941BB6CF8A00483182 /* ErrorMessage.m */; settings = {ASSET_TAGS = (); }; };
+		C5A10E3AAB63486EC6C40EF3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601A285A755B3D7F4785B4F /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11A987DB1BADFC2200426C65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11A987B91BADFC2200426C65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A987C01BADFC2200426C65;
+			remoteInfo = BikeMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1169C1651BB0554A002306C4 /* StationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationService.h; sourceTree = "<group>"; };
+		1169C1661BB0554A002306C4 /* StationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationService.m; sourceTree = "<group>"; };
+		1169C1691BB05EF7002306C4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController.h; sourceTree = "<group>"; };
+		1169C16A1BB05EF7002306C4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController.m; sourceTree = "<group>"; };
+		1169C16D1BB06111002306C4 /* StationListTableViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationListTableViewTableViewController.h; sourceTree = "<group>"; };
+		1169C16E1BB06111002306C4 /* StationListTableViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListTableViewTableViewController.m; sourceTree = "<group>"; };
+		1169C1711BB061DE002306C4 /* StationListCustomCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationListCustomCellTableViewCell.h; sourceTree = "<group>"; };
+		1169C1721BB061DE002306C4 /* StationListCustomCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListCustomCellTableViewCell.m; sourceTree = "<group>"; };
+		1199EBED1BB6EC2400871F7D /* UserManagementService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManagementService.h; sourceTree = "<group>"; };
+		1199EBEE1BB6EC2400871F7D /* UserManagementService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManagementService.m; sourceTree = "<group>"; };
+		1199EBF01BB6F93F00871F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1199EBF11BB6F93F00871F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1199EBF31BB6FE0800871F7D /* UserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAccountViewController.h; sourceTree = "<group>"; };
+		1199EBF41BB6FE0800871F7D /* UserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAccountViewController.m; sourceTree = "<group>"; };
+		11A02D3E1BB8233300C6145E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		11A02D551BB8250900C6145E /* MZBlurEffectAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZBlurEffectAdapter.h; sourceTree = "<group>"; };
+		11A02D561BB8250900C6145E /* MZBlurEffectAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZBlurEffectAdapter.m; sourceTree = "<group>"; };
+		11A02D571BB8250900C6145E /* MZFormSheetPresentationController Swift Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MZFormSheetPresentationController Swift Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		11A02D581BB8250900C6145E /* MZFormSheetPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetPresentationController.h; sourceTree = "<group>"; };
+		11A02D591BB8250900C6145E /* MZFormSheetPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetPresentationController.m; sourceTree = "<group>"; };
+		11A02D5A1BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetPresentationControllerAnimator.h; sourceTree = "<group>"; };
+		11A02D5B1BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetPresentationControllerAnimator.m; sourceTree = "<group>"; };
+		11A02D5C1BB8250900C6145E /* MZFormSheetPresentationControllerSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetPresentationControllerSegue.h; sourceTree = "<group>"; };
+		11A02D5D1BB8250900C6145E /* MZFormSheetPresentationControllerSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetPresentationControllerSegue.m; sourceTree = "<group>"; };
+		11A02D5E1BB8250900C6145E /* MZTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTransition.h; sourceTree = "<group>"; };
+		11A02D5F1BB8250900C6145E /* MZTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTransition.m; sourceTree = "<group>"; };
+		11A02D601BB8250900C6145E /* UIViewController+TargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TargetViewController.h"; sourceTree = "<group>"; };
+		11A02D611BB8250900C6145E /* UIViewController+TargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TargetViewController.m"; sourceTree = "<group>"; };
+		11A02D681BB82A7000C6145E /* SignOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOutViewController.h; sourceTree = "<group>"; };
+		11A02D691BB82A7000C6145E /* SignOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignOutViewController.m; sourceTree = "<group>"; };
+		11A02D6B1BB85F6400C6145E /* launchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = launchScreen.storyboard; sourceTree = "<group>"; };
+		11A987C11BADFC2200426C65 /* BikeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A987C51BADFC2200426C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A987C61BADFC2200426C65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11A987C81BADFC2200426C65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11A987C91BADFC2200426C65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11A987CB1BADFC2200426C65 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = BikeMe/MainViewController.h; sourceTree = "<group>"; };
+		11A987CC1BADFC2200426C65 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = BikeMe/MainViewController.m; sourceTree = "<group>"; };
+		11A987CF1BADFC2200426C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11A987D11BADFC2200426C65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11A987DA1BADFC2200426C65 /* BikeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A987DF1BADFC2200426C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A987E01BADFC2200426C65 /* BikeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeMeTests.m; sourceTree = "<group>"; };
+		11A987EA1BADFDBD00426C65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		11B25B931BB6AC700033ADB4 /* SignInControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInControllerViewController.h; sourceTree = "<group>"; };
+		11B25B941BB6AC700033ADB4 /* SignInControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInControllerViewController.m; sourceTree = "<group>"; };
+		11B7015B1BAEC45800BBFE8D /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		11B7015C1BAEC45800BBFE8D /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		11B7015F1BAECAA400BBFE8D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		11B701601BAECAA400BBFE8D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		11B701621BAECEAD00BBFE8D /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		11B701631BAECEAD00BBFE8D /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		11B701661BAED13700BBFE8D /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		11B701671BAED13700BBFE8D /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		11B701691BAED2AD00BBFE8D /* Bike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bike.h; sourceTree = "<group>"; };
+		11B7016A1BAED2AD00BBFE8D /* Bike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bike.m; sourceTree = "<group>"; };
+		11B7016D1BAEF15F00BBFE8D /* ConnectionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionHelper.h; sourceTree = "<group>"; };
+		11B7016E1BAEF15F00BBFE8D /* ConnectionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionHelper.m; sourceTree = "<group>"; };
+		11EB26931BB6CF8A00483182 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
+		11EB26941BB6CF8A00483182 /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessage.m; sourceTree = "<group>"; };
+		3601A285A755B3D7F4785B4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C05B8B725C00F736EE25A32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F584708AA7F31F50BA69CA08 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11A987BE1BADFC2200426C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A987EB1BADFDBD00426C65 /* MapKit.framework in Frameworks */,
+				C5A10E3AAB63486EC6C40EF3 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A987D71BADFC2200426C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1169C16C1BB05FC6002306C4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				11A987CE1BADFC2200426C65 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		1169C1701BB061C0002306C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1169C1711BB061DE002306C4 /* StationListCustomCellTableViewCell.h */,
+				1169C1721BB061DE002306C4 /* StationListCustomCellTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		11A02D541BB8250900C6145E /* MZFormSheetPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				11A02D551BB8250900C6145E /* MZBlurEffectAdapter.h */,
+				11A02D561BB8250900C6145E /* MZBlurEffectAdapter.m */,
+				11A02D571BB8250900C6145E /* MZFormSheetPresentationController Swift Example-Bridging-Header.h */,
+				11A02D581BB8250900C6145E /* MZFormSheetPresentationController.h */,
+				11A02D591BB8250900C6145E /* MZFormSheetPresentationController.m */,
+				11A02D5A1BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.h */,
+				11A02D5B1BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.m */,
+				11A02D5C1BB8250900C6145E /* MZFormSheetPresentationControllerSegue.h */,
+				11A02D5D1BB8250900C6145E /* MZFormSheetPresentationControllerSegue.m */,
+				11A02D5E1BB8250900C6145E /* MZTransition.h */,
+				11A02D5F1BB8250900C6145E /* MZTransition.m */,
+				11A02D601BB8250900C6145E /* UIViewController+TargetViewController.h */,
+				11A02D611BB8250900C6145E /* UIViewController+TargetViewController.m */,
+			);
+			path = MZFormSheetPresentationController;
+			sourceTree = "<group>";
+		};
+		11A987B81BADFC2200426C65 = {
+			isa = PBXGroup;
+			children = (
+				11A02D541BB8250900C6145E /* MZFormSheetPresentationController */,
+				11A02D3E1BB8233300C6145E /* Podfile */,
+				1169C1701BB061C0002306C4 /* View */,
+				1169C16C1BB05FC6002306C4 /* Storyboard */,
+				11B701701BAEF40300BBFE8D /* ModelHelper */,
+				11B7016C1BAEF14E00BBFE8D /* Utilities */,
+				11B701651BAED12800BBFE8D /* Model */,
+				11B7015E1BAECA2700BBFE8D /* ViewController */,
+				11A987EA1BADFDBD00426C65 /* MapKit.framework */,
+				11A987C31BADFC2200426C65 /* BikeMe */,
+				11A987DD1BADFC2200426C65 /* BikeMeTests */,
+				11A987C21BADFC2200426C65 /* Products */,
+				785852D2CA2B64FE21375336 /* Pods */,
+				3C6C22C0A3F558ED94F664DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11A987C21BADFC2200426C65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11A987C11BADFC2200426C65 /* BikeMe.app */,
+				11A987DA1BADFC2200426C65 /* BikeMeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11A987C31BADFC2200426C65 /* BikeMe */ = {
+			isa = PBXGroup;
+			children = (
+				1169C1691BB05EF7002306C4 /* SWRevealViewController.h */,
+				1169C16A1BB05EF7002306C4 /* SWRevealViewController.m */,
+				11B701621BAECEAD00BBFE8D /* Configuration.h */,
+				11B701631BAECEAD00BBFE8D /* Configuration.m */,
+				11A987C81BADFC2200426C65 /* AppDelegate.h */,
+				11A987C91BADFC2200426C65 /* AppDelegate.m */,
+				11A987D11BADFC2200426C65 /* Images.xcassets */,
+				11A987C41BADFC2200426C65 /* Supporting Files */,
+				11A02D6B1BB85F6400C6145E /* launchScreen.storyboard */,
+			);
+			path = BikeMe;
+			sourceTree = "<group>";
+		};
+		11A987C41BADFC2200426C65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11A987C51BADFC2200426C65 /* Info.plist */,
+				11A987C61BADFC2200426C65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11A987DD1BADFC2200426C65 /* BikeMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				11A987E01BADFC2200426C65 /* BikeMeTests.m */,
+				11A987DE1BADFC2200426C65 /* Supporting Files */,
+			);
+			path = BikeMeTests;
+			sourceTree = "<group>";
+		};
+		11A987DE1BADFC2200426C65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11A987DF1BADFC2200426C65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11B7015E1BAECA2700BBFE8D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11A987CB1BADFC2200426C65 /* MainViewController.h */,
+				11A987CC1BADFC2200426C65 /* MainViewController.m */,
+				11B7015B1BAEC45800BBFE8D /* NavigationViewController.h */,
+				11B7015C1BAEC45800BBFE8D /* NavigationViewController.m */,
+				11B7015F1BAECAA400BBFE8D /* MapViewController.h */,
+				11B701601BAECAA400BBFE8D /* MapViewController.m */,
+				1169C16D1BB06111002306C4 /* StationListTableViewTableViewController.h */,
+				1169C16E1BB06111002306C4 /* StationListTableViewTableViewController.m */,
+				11B25B931BB6AC700033ADB4 /* SignInControllerViewController.h */,
+				11B25B941BB6AC700033ADB4 /* SignInControllerViewController.m */,
+				1199EBF31BB6FE0800871F7D /* UserAccountViewController.h */,
+				1199EBF41BB6FE0800871F7D /* UserAccountViewController.m */,
+				11A02D681BB82A7000C6145E /* SignOutViewController.h */,
+				11A02D691BB82A7000C6145E /* SignOutViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		11B701651BAED12800BBFE8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11B701661BAED13700BBFE8D /* Station.h */,
+				11B701671BAED13700BBFE8D /* Station.m */,
+				11B701691BAED2AD00BBFE8D /* Bike.h */,
+				11B7016A1BAED2AD00BBFE8D /* Bike.m */,
+				11EB26931BB6CF8A00483182 /* ErrorMessage.h */,
+				11EB26941BB6CF8A00483182 /* ErrorMessage.m */,
+				1199EBF01BB6F93F00871F7D /* User.h */,
+				1199EBF11BB6F93F00871F7D /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		11B7016C1BAEF14E00BBFE8D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				11B7016D1BAEF15F00BBFE8D /* ConnectionHelper.h */,
+				11B7016E1BAEF15F00BBFE8D /* ConnectionHelper.m */,
+				1169C1651BB0554A002306C4 /* StationService.h */,
+				1169C1661BB0554A002306C4 /* StationService.m */,
+				1199EBED1BB6EC2400871F7D /* UserManagementService.h */,
+				1199EBEE1BB6EC2400871F7D /* UserManagementService.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		11B701701BAEF40300BBFE8D /* ModelHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ModelHelper;
+			sourceTree = "<group>";
+		};
+		3C6C22C0A3F558ED94F664DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3601A285A755B3D7F4785B4F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		785852D2CA2B64FE21375336 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F584708AA7F31F50BA69CA08 /* Pods.debug.xcconfig */,
+				4C05B8B725C00F736EE25A32 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11A987C01BADFC2200426C65 /* BikeMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A987E41BADFC2200426C65 /* Build configuration list for PBXNativeTarget "BikeMe" */;
+			buildPhases = (
+				F49055931F0886E8359ED328 /* Check Pods Manifest.lock */,
+				11A987BD1BADFC2200426C65 /* Sources */,
+				11A987BE1BADFC2200426C65 /* Frameworks */,
+				11A987BF1BADFC2200426C65 /* Resources */,
+				71806CD50CC32CBDBDF6563A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeMe;
+			productName = BikeMe;
+			productReference = 11A987C11BADFC2200426C65 /* BikeMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11A987D91BADFC2200426C65 /* BikeMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A987E71BADFC2200426C65 /* Build configuration list for PBXNativeTarget "BikeMeTests" */;
+			buildPhases = (
+				11A987D61BADFC2200426C65 /* Sources */,
+				11A987D71BADFC2200426C65 /* Frameworks */,
+				11A987D81BADFC2200426C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11A987DC1BADFC2200426C65 /* PBXTargetDependency */,
+			);
+			name = BikeMeTests;
+			productName = BikeMeTests;
+			productReference = 11A987DA1BADFC2200426C65 /* BikeMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11A987B91BADFC2200426C65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Kysiek;
+				TargetAttributes = {
+					11A987C01BADFC2200426C65 = {
+						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					11A987D91BADFC2200426C65 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 11A987C01BADFC2200426C65;
+					};
+				};
+			};
+			buildConfigurationList = 11A987BC1BADFC2200426C65 /* Build configuration list for PBXProject "BikeMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11A987B81BADFC2200426C65;
+			productRefGroup = 11A987C21BADFC2200426C65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11A987C01BADFC2200426C65 /* BikeMe */,
+				11A987D91BADFC2200426C65 /* BikeMeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11A987BF1BADFC2200426C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A987D01BADFC2200426C65 /* Main.storyboard in Resources */,
+				11A02D3F1BB8233300C6145E /* Podfile in Resources */,
+				11A02D6C1BB85F6400C6145E /* launchScreen.storyboard in Resources */,
+				11A987D21BADFC2200426C65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A987D81BADFC2200426C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71806CD50CC32CBDBDF6563A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F49055931F0886E8359ED328 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11A987BD1BADFC2200426C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B25B951BB6AC700033ADB4 /* SignInControllerViewController.m in Sources */,
+				11B701641BAECEAD00BBFE8D /* Configuration.m in Sources */,
+				11A02D631BB8250900C6145E /* MZFormSheetPresentationController.m in Sources */,
+				11A987CD1BADFC2200426C65 /* MainViewController.m in Sources */,
+				1169C16F1BB06111002306C4 /* StationListTableViewTableViewController.m in Sources */,
+				11A02D6A1BB82A7000C6145E /* SignOutViewController.m in Sources */,
+				11A02D641BB8250900C6145E /* MZFormSheetPresentationControllerAnimator.m in Sources */,
+				1199EBF21BB6F93F00871F7D /* User.m in Sources */,
+				11A987CA1BADFC2200426C65 /* AppDelegate.m in Sources */,
+				11B7016B1BAED2AD00BBFE8D /* Bike.m in Sources */,
+				11B7015D1BAEC45800BBFE8D /* NavigationViewController.m in Sources */,
+				11EB26951BB6CF8A00483182 /* ErrorMessage.m in Sources */,
+				1199EBF51BB6FE0800871F7D /* UserAccountViewController.m in Sources */,
+				11B701611BAECAA400BBFE8D /* MapViewController.m in Sources */,
+				11A987C71BADFC2200426C65 /* main.m in Sources */,
+				1169C1731BB061DF002306C4 /* StationListCustomCellTableViewCell.m in Sources */,
+				11A02D651BB8250900C6145E /* MZFormSheetPresentationControllerSegue.m in Sources */,
+				11A02D671BB8250900C6145E /* UIViewController+TargetViewController.m in Sources */,
+				1169C1671BB0554A002306C4 /* StationService.m in Sources */,
+				11A02D621BB8250900C6145E /* MZBlurEffectAdapter.m in Sources */,
+				11B701681BAED13700BBFE8D /* Station.m in Sources */,
+				11A02D661BB8250900C6145E /* MZTransition.m in Sources */,
+				11B7016F1BAEF15F00BBFE8D /* ConnectionHelper.m in Sources */,
+				1169C16B1BB05EF7002306C4 /* SWRevealViewController.m in Sources */,
+				1199EBEF1BB6EC2400871F7D /* UserManagementService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A987D61BADFC2200426C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A987E11BADFC2200426C65 /* BikeMeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11A987DC1BADFC2200426C65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A987C01BADFC2200426C65 /* BikeMe */;
+			targetProxy = 11A987DB1BADFC2200426C65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11A987CE1BADFC2200426C65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A987CF1BADFC2200426C65 /* Base */,
+			);
+			name = Main.storyboard;
+			path = BikeMe;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11A987E21BADFC2200426C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11A987E31BADFC2200426C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11A987E51BADFC2200426C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F584708AA7F31F50BA69CA08 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysiek.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11A987E61BADFC2200426C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C05B8B725C00F736EE25A32 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysiek.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		11A987E81BADFC2200426C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysiek.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeMe.app/BikeMe";
+			};
+			name = Debug;
+		};
+		11A987E91BADFC2200426C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysiek.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeMe.app/BikeMe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11A987BC1BADFC2200426C65 /* Build configuration list for PBXProject "BikeMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A987E21BADFC2200426C65 /* Debug */,
+				11A987E31BADFC2200426C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A987E41BADFC2200426C65 /* Build configuration list for PBXNativeTarget "BikeMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A987E51BADFC2200426C65 /* Debug */,
+				11A987E61BADFC2200426C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A987E71BADFC2200426C65 /* Build configuration list for PBXNativeTarget "BikeMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A987E81BADFC2200426C65 /* Debug */,
+				11A987E91BADFC2200426C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11A987B91BADFC2200426C65 /* Project object */;
+}
