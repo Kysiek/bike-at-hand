@@ -10,8 +10,6 @@
 
 @interface Station : NSObject
 
-
-
 @property (nonatomic, strong) NSString* stationName;
 @property (nonatomic) NSInteger stationNumber;
 @property (nonatomic, strong) NSString* bikesAvailable;
@@ -19,8 +17,11 @@
 @property (nonatomic, strong) NSNumber* latitude;
 @property (nonatomic, strong) NSNumber* longitude;
 @property (nonatomic,strong) NSMutableArray* bikes;
+@property (nonatomic, strong) NSNumber* distance;
 
 +(Station*)stationFromDictionary: (NSDictionary*) dictionary;
 -(NSString*)bikesAvailabilityString;
 -(NSInteger)getBikesAvailable;
+-(BOOL)hasAvailableBikes;
+-(NSString*)prettifyDistance;
 @end

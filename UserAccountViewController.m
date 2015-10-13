@@ -7,9 +7,14 @@
 //
 
 #import "UserAccountViewController.h"
+#import "AccountHistory.h"
+#import "AccountHistoryCellViewTableViewCell.h"
+#import "UserManagementService.h"
 
 @interface UserAccountViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray* accountHistoryArray;
+@property (nonatomic, strong) UserManagementService* userService;
 @end
 
 @implementation UserAccountViewController
@@ -17,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.barButton.title = userAccountInfoViewControllerTitle;
+    self.userService = [UserManagementService getInstance];
+    [self.userService loadAccountHistory ];
+    [[NSNotificationCenter defaultCenter]  addObserver:self
+                                               selector:@selector(receivedNotification:)
+                                                   name:UserHistoryAccountArrived
+                                                 object:nil];
     // Do any additional setup after loading the view.
 }
 
@@ -25,14 +36,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)receivedNotification:(NSNotification*) notification {
+    if([[notification name] isEqualToString:UserHistoryAccountArrived]) {
+        [self reloadTableViewForAccountHistory:[self.userService getAccountHistory]];
+    }
 }
-*/
+- (void)reloadTableViewForAccountHistory: (NSArray*) accountHistoryArray{
+    self.accountHistoryArray = accountHistoryArray;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+static NSString* CellID = @"accountHistoryCell";
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    AccountHistory* accountHistory = self.accountHistoryArray[row];
+    AccountHistoryCellViewTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellID];
+    cell.backgroundColor = [UIColor whiteColor];
+    [cell setLabels:accountHistory];
+    return cell;
+}
+-(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
+    if(self.accountHistoryArray) {
+        return self.accountHistoryArray.count;
+    }
+    return 0;
+}
 
 @end

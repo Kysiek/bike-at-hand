@@ -11,13 +11,15 @@
 @interface StationListCustomCellTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bikesAvailableLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end
 @implementation StationListCustomCellTableViewCell
 
-- (void) setLabels:(Station *)station {
+- (void)setLabels:(Station *)station {
     self.stationNameLabel.text = station.stationName;
     self.bikesAvailableLabel.text = [NSString stringWithFormat:@"Dostnępne rowery: %ld", (long)[station getBikesAvailable]];
+    self.distanceLabel.text = [station prettifyDistance];
 }
 - (void)awakeFromNib {
     // Initialization code

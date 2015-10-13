@@ -11,7 +11,6 @@
 #import "MapViewController.h"
 
 static NSString* const SignedInSegue = @"SignedInSegue";
-NSString* const UserSignedInNotification = @"UserSignedInNotification";
 
 @interface SignInControllerViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
@@ -47,9 +46,6 @@ NSString* const UserSignedInNotification = @"UserSignedInNotification";
                            dispatch_async(dispatch_get_main_queue(), ^{
                                [weakSelf hideWaitUI];
                                [self performSegueWithIdentifier:SignedInSegue sender:nil];
-                               
-                               //sending notifications that user is signed in
-                               [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
                            });
                         }
                        failure:^(ErrorMessage *error) {

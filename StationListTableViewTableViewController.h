@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 
-@interface StationListTableViewTableViewController : MainViewController<UITableViewDataSource>
+@interface StationListTableViewTableViewController : MainViewController<UITableViewDataSource,UISearchBarDelegate,UIPopoverPresentationControllerDelegate>
 @end

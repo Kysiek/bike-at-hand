@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+extern NSString* const UserPhoneNumberKey;
+extern NSString* const UserAuthKeyKey;
 @interface User : NSObject
 @property (nonatomic, strong) NSString* phoneNumber;
-- (instancetype) initUserWithPhoneNumber: (NSString*) phoneNumber;
-- (instancetype) initWithDictionary: (NSDictionary *) dictionary;
+@property (nonatomic, strong) NSString* authKey;
+- (instancetype)initUserWithPhoneNumber: (NSString*) phoneNumber authKey:(NSString*)authKey;
+- (instancetype)initWithDictionary: (NSDictionary *) dictionary;
+- (NSDictionary*)dictionaryRepresentation;
 @end

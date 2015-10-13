@@ -8,16 +8,24 @@
 
 #import "User.h"
 
-static NSString* const UserPhoneNumberKey = @"name";
+NSString* const UserPhoneNumberKey = @"username";
+NSString* const UserAuthKeyKey = @"authKey";
 
 @implementation User
-- (instancetype) initUserWithPhoneNumber:(NSString *)phoneNumber {
+- (instancetype)initUserWithPhoneNumber:(NSString *)phoneNumber authKey:(NSString *)authKey {
     if((self = [super init])) {
         self.phoneNumber = phoneNumber;
+        self.authKey = authKey;
     }
     return self;
 }
-- (instancetype) initWithDictionary: (NSDictionary *) dictionary {
-    return [self initUserWithPhoneNumber:dictionary[UserPhoneNumberKey]];
+- (instancetype)initWithDictionary: (NSDictionary *) dictionary {
+    return [self initUserWithPhoneNumber:dictionary[UserPhoneNumberKey] authKey:dictionary[UserAuthKeyKey]];
+}
+- (NSDictionary*)dictionaryRepresentation {
+    return @{
+             UserPhoneNumberKey: self.phoneNumber,
+             UserAuthKeyKey: self.authKey
+    };
 }
 @end

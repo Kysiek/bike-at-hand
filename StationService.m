@@ -31,9 +31,14 @@ static StationService * stationService;
     }
     return stationService;
 }
+
 -(void) fetchStations {
     __weak typeof(self) weakSelf = self;
-    [[ConnectionHelper mainConnectionHelper] submitGETPath:@"/stations" success:^(NSData *data) {
+    [[ConnectionHelper mainConnectionHelper]
+     submitGETPath:@"/stations/all"
+            body:nil
+        expectedStatus:254
+            success:^(NSData *data) {
         NSError *error = nil;
         NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if(result && [result isKindOfClass:[NSArray class]]) {

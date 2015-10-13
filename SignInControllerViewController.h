@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 
-extern NSString* const UserSignedInNotification;
 
 @interface SignInControllerViewController : MainViewController
 

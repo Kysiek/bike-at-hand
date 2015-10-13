@@ -30,10 +30,20 @@ static NSString* longitudeKey = @"longitude";
     newStation.bikes = [dictionary valueForKey:bikesKey];
     return newStation;
 }
+- (BOOL)hasAvailableBikes {
+    return [self.bikesAvailable integerValue] > 0;
+}
 -(NSString*)bikesAvailabilityString {
     return [NSString stringWithFormat:@"%@ rowerów dostępnych",self.bikesAvailable];
 }
 -(NSInteger)getBikesAvailable {
     return self.bikes.count;
+}
+-(NSString*)prettifyDistance {
+    NSInteger distance = [self.distance intValue];
+    if(distance < 1000) {
+        return [NSString stringWithFormat:@"%ld m",(long)distance];
+    }
+    return [NSString stringWithFormat:@"%ld m",(long)distance];
 }
 @end

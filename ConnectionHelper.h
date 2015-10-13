@@ -12,7 +12,10 @@
 @interface ConnectionHelper : NSObject
 +(ConnectionHelper*) mainConnectionHelper;
 
+//TODO: Refactor: make one one method instead of 4 belowed, as they have the same arguments (except submitDELETEPath - is it necessary?). This new method should take requestMethod argument.
 - (void)submitGETPath:(NSString *)path
+                 body:(NSDictionary *)bodyDict
+       expectedStatus:(NSInteger)expectedStatus
               success:(void(^)(NSData *data))success
               failure:(void(^)(ErrorMessage *error))failure;
 

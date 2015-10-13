@@ -185,7 +185,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj6-r2-0OM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj6-r2-0OM">
                                 <rect key="frame" x="72" y="90" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,6 +243,48 @@
             </objects>
             <point key="canvasLocation" x="-198" y="-496"/>
         </scene>
+        <!--Map Station View Controller-->
+        <scene sceneID="m4d-23-sUB">
+            <objects>
+                <viewController id="gzq-tx-ndp" customClass="MapStationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Nf-f7-I5b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vtn-HJ-psK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fdL-eQ-8EW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P93-8g-v6q">
+                                <rect key="frame" x="67" y="270" width="240" height="128"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P93-8g-v6q" firstAttribute="leading" secondItem="fdL-eQ-8EW" secondAttribute="leading" id="BDw-zA-QuY"/>
+                            <constraint firstItem="Vtn-HJ-psK" firstAttribute="top" secondItem="P93-8g-v6q" secondAttribute="bottom" id="eVd-8V-tS9"/>
+                            <constraint firstItem="P93-8g-v6q" firstAttribute="top" secondItem="7Nf-f7-I5b" secondAttribute="bottom" id="j5O-wl-U70"/>
+                            <constraint firstAttribute="trailing" secondItem="P93-8g-v6q" secondAttribute="trailing" id="zSw-PT-QCd"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="P93-8g-v6q" id="HMG-lk-xsA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Jk-tR-F2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem id="tfU-ha-hgt">
+                    <barButtonItem key="leftBarButtonItem" title="Item" id="SL3-AV-OgZ">
+                        <connections>
+                            <segue destination="eZb-tC-eDQ" kind="show" id="ZCx-uT-AVM"/>
+                        </connections>
+                    </barButtonItem>
+                </navigationItem>
+            </objects>
+            <point key="canvasLocation" x="-1650.5" y="1242.5"/>
+        </scene>
         <!--Station List Table View Table View Controller-->
         <scene sceneID="nRW-ub-RpS">
             <objects>
@@ -255,15 +297,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5c-re-HJZ">
-                                <rect key="frame" x="30" y="13" width="325" height="618"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5c-re-HJZ">
+                                <rect key="frame" x="20" y="44" width="335" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCustomCell" rowHeight="62" id="Qi6-tQ-G5V" customClass="StationListCustomCellTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="325" height="62"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qi6-tQ-G5V" id="X42-Zi-xon">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wolnych rowerów:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUa-WM-MPa">
@@ -278,11 +320,19 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="? m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pi-VL-TWr">
+                                                    <rect key="frame" x="264" y="31" width="63" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bikesAvailableLabel" destination="BUa-WM-MPa" id="MAV-z5-YCG"/>
+                                            <outlet property="distanceLabel" destination="3pi-VL-TWr" id="ki9-7X-hwo"/>
                                             <outlet property="stationNameLabel" destination="Ydy-Rj-Y6y" id="bEo-ts-O5V"/>
+                                            <segue destination="qtT-L7-cZr" kind="show" identifier="stationDetailSegue" id="R2u-TK-DrB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -291,21 +341,35 @@
                                     <outlet property="delegate" destination="eZb-tC-eDQ" id="uFf-fg-cTY"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PoO-UU-1Yh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eZb-tC-eDQ" id="zNp-33-AcL"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K5c-re-HJZ" firstAttribute="top" secondItem="vvE-LZ-cZd" secondAttribute="top" id="LSO-ug-PJ9"/>
-                            <constraint firstItem="K5c-re-HJZ" firstAttribute="leading" secondItem="vvE-LZ-cZd" secondAttribute="leading" id="U5I-C0-qE5"/>
-                            <constraint firstItem="yHJ-0w-S5h" firstAttribute="top" secondItem="K5c-re-HJZ" secondAttribute="bottom" id="kaH-K9-hZv"/>
-                            <constraint firstAttribute="trailing" secondItem="K5c-re-HJZ" secondAttribute="trailing" id="va3-GJ-dl4"/>
+                            <constraint firstItem="yHJ-0w-S5h" firstAttribute="top" secondItem="K5c-re-HJZ" secondAttribute="bottom" id="76t-hY-LkD"/>
+                            <constraint firstItem="PoO-UU-1Yh" firstAttribute="top" secondItem="cmI-DI-hR9" secondAttribute="bottom" id="QrZ-mR-bbS"/>
+                            <constraint firstAttribute="trailing" secondItem="K5c-re-HJZ" secondAttribute="trailing" id="baK-6M-NIo"/>
+                            <constraint firstAttribute="trailing" secondItem="PoO-UU-1Yh" secondAttribute="trailing" id="h8k-EM-3j7"/>
+                            <constraint firstItem="K5c-re-HJZ" firstAttribute="leading" secondItem="vvE-LZ-cZd" secondAttribute="leading" id="lER-5Y-cBq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZNA-dW-Vph">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="4Fc-Vx-FCv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="E0Q-Zi-EAe" userLabel="Map">
+                            <connections>
+                                <segue destination="gzq-tx-ndp" kind="show" identifier="presentOnTheMapSegue" id="oor-ls-3Ot"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="barButton" destination="4Fc-Vx-FCv" id="1f6-Dd-mEb"/>
+                        <outlet property="searchBar" destination="PoO-UU-1Yh" id="VKO-Do-KL0"/>
                         <outlet property="tableView" destination="K5c-re-HJZ" id="ud3-4k-5aU"/>
                     </connections>
                 </viewController>
@@ -395,14 +459,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9u-Wg-vqY">
-                                <rect key="frame" x="142" y="166" width="90" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BDI-OD-44x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountHistoryCell" rowHeight="75" id="jzn-qd-paZ" customClass="AccountHistoryCellViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzn-qd-paZ" id="Kxc-mu-t9m">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="27.08.2014 13:23 - 14:56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scx-J3-IOb">
+                                                    <rect key="frame" x="8" y="8" width="214" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bike: 5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYj-wC-Q7g">
+                                                    <rect key="frame" x="230" y="7" width="120" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Politechnika Wrocławska - Setka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-Ey-WjN">
+                                                    <rect key="frame" x="8" y="37" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bikeNumberLabel" destination="kYj-wC-Q7g" id="DhC-jm-RG5"/>
+                                            <outlet property="dateLabel" destination="Scx-J3-IOb" id="rrR-fS-x2V"/>
+                                            <outlet property="routeLabel" destination="uaS-Ey-WjN" id="pbT-yK-v53"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9NH-CM-AKc" id="vA4-NM-PyB"/>
+                                    <outlet property="delegate" destination="9NH-CM-AKc" id="l37-Mj-zia"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BDI-OD-44x" firstAttribute="leading" secondItem="ldf-7L-dP3" secondAttribute="leading" id="TEh-Vv-5EZ"/>
+                            <constraint firstAttribute="trailing" secondItem="BDI-OD-44x" secondAttribute="trailing" id="l6Q-4n-WPV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MON-3C-49b">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="xQm-Qz-yuW"/>
@@ -410,6 +515,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="barButton" destination="xQm-Qz-yuW" id="wqg-XP-EBx"/>
+                        <outlet property="tableView" destination="BDI-OD-44x" id="Qhq-Bk-5EK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Hd-OV-LPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -453,8 +559,98 @@
             </objects>
             <point key="canvasLocation" x="-195.5" y="540.5"/>
         </scene>
+        <!--Station Details View Controller-->
+        <scene sceneID="hcZ-oy-aV9">
+            <objects>
+                <viewController id="qtT-L7-cZr" customClass="StationDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J8q-PB-X22"/>
+                        <viewControllerLayoutGuide type="bottom" id="6My-Us-oVX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uTv-9u-LXo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euo-pg-AQW">
+                                <rect key="frame" x="0.0" y="270" width="375" height="301"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bikeCustomCell" rowHeight="65" id="rwA-Hv-f9l" customClass="BikeTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rwA-Hv-f9l" id="d7w-LX-jO2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numer roweru: 5643" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="638-op-e9d">
+                                                    <rect key="frame" x="8" y="22" width="212" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-Lo-lqL">
+                                                    <rect key="frame" x="296" y="18" width="71" height="30"/>
+                                                    <state key="normal" title="Wypożycz">
+                                                        <color key="titleColor" red="0.26619212170000001" green="1" blue="0.12965552629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapActionButton:" destination="rwA-Hv-f9l" eventType="touchUpInside" id="2x3-vu-VMp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="actionButton" destination="sJB-Lo-lqL" id="UpD-27-gG1"/>
+                                            <outlet property="bikeNumberLabel" destination="638-op-e9d" id="OsB-HY-j8n"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qtT-L7-cZr" id="vzs-ZD-nYt"/>
+                                    <outlet property="delegate" destination="qtT-L7-cZr" id="3ny-Wc-UTt"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Politechnika Wrocławska - Gmach główny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F3-ph-RRf">
+                                <rect key="frame" x="0.0" y="75" width="375" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cov-6Q-TLO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="VWH-RD-e3k"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Dostępne rowery: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pk-KX-1wZ">
+                                <rect key="frame" x="112" y="148" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="euo-pg-AQW" firstAttribute="leading" secondItem="uTv-9u-LXo" secondAttribute="leading" id="AUh-pW-JQ8"/>
+                            <constraint firstItem="euo-pg-AQW" firstAttribute="top" secondItem="2pk-KX-1wZ" secondAttribute="bottom" id="KQe-KT-1Ha"/>
+                            <constraint firstAttribute="trailing" secondItem="euo-pg-AQW" secondAttribute="trailing" id="NUJ-ev-2QF"/>
+                            <constraint firstItem="6My-Us-oVX" firstAttribute="top" secondItem="euo-pg-AQW" secondAttribute="bottom" id="Xd4-6E-y16"/>
+                            <constraint firstItem="2pk-KX-1wZ" firstAttribute="top" secondItem="0F3-ph-RRf" secondAttribute="bottom" id="sQg-KW-oD3"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bikesAvailableLabel" destination="2pk-KX-1wZ" id="KA0-5H-usj"/>
+                        <outlet property="stationNameLabel" destination="0F3-ph-RRf" id="dhh-cl-rom"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jb-r8-TDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135.5" y="1382.5"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LG9-5S-px3"/>
+        <segue reference="vUt-fq-Y9t"/>
     </inferredMetricsTieBreakers>
 </document>

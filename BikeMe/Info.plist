@@ -50,6 +50,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>I need location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>I need locatiom</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

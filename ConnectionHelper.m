@@ -1,4 +1,4 @@
-	//
+//
 //  ConnectionHelper.m
 //  BikeMe
 //
@@ -20,13 +20,15 @@ static ConnectionHelper* mainHelper;
 }
 #pragma mark - API methods
 - (void)submitGETPath:(NSString *)path
+                 body:(NSDictionary *)bodyDict
+       expectedStatus:(NSInteger)expectedStatus
               success:(void(^)(NSData *data))success
               failure:(void(^)(ErrorMessage *error))failure {
     NSURL *URL = [self URLWithPath:path];
     return [self submitRequestWithURL:URL
                                method:@"GET"
-                                 body:nil
-                       expectedStatus:200
+                                 body:bodyDict
+                       expectedStatus:expectedStatus
                               success:success
                               failure:failure];
 }

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 
-@interface UserAccountViewController : MainViewController
+@interface UserAccountViewController : MainViewController<UITableViewDataSource>
 
 @end

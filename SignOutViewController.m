@@ -9,7 +9,6 @@
 #import "SignOutViewController.h"
 #import "UserManagementService.h"
 
-NSString* const UserSignedOutNotification = @"UserSignedOutNotification";
 
 @interface SignOutViewController ()
 
@@ -40,8 +39,7 @@ NSString* const UserSignedOutNotification = @"UserSignedOutNotification";
                            dispatch_async(dispatch_get_main_queue(), ^{
                                [weakSelf hideWaitUI];
                                
-                               //sending notifications that user is signed out
-                               [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedOutNotification object:nil];
+                               
                                [self.delegate signOutProcessComplete];
                            });
                        }
