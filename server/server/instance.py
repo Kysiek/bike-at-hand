@@ -14,6 +14,6 @@ def get_app(import_name, **kwargs):
     for code in default_exceptions.iterkeys():
         application.error_handler_spec[None][code] = make_json_error
 
-    application.config.from_object('server.config.flask')
+    application.config.from_object('config.flask')
         
     return application

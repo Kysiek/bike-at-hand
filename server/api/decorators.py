@@ -1,4 +1,4 @@
-from server.api.account.session import is_authenticated
+from api.account.session import is_authenticated
 from flask import jsonify
 
 

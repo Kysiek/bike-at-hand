@@ -1,5 +1,5 @@
 import requests
-from server.config.constants import API_URL, SESSION_TOKEN, API_COOKIE_NAME
+from config.constants import API_URL, SESSION_TOKEN, API_COOKIE_NAME
 from flask import session
 
 

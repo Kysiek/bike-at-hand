@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson import json_util
 import json
-from server.web.http_responses import respond
+from web.http_responses import respond
 
 
 def all():
