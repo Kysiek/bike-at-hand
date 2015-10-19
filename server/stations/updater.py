@@ -23,7 +23,8 @@ class StationsUpdater(Thread):
         if stations_xml.status_code == 200:
             parsed_stations = get_stations(stations_xml.text)
             client = MongoClient('localhost', 27017)
+            db = pymongo.database.Database(client, 'bikeathand')
             for station_id, station in parsed_stations.iteritems():
-                client.bikeathand.stations.update_one({'id': station_id},
-                                                      {'$set': {'id': station_id, 'name': station.name, 'location': station.location, 'racks_count': station.racks_count, 'bikes': station.bikes}},
-                                                      upsert=True)
+                db.stations.update_one({'id': station_id},
+                                       {'$set': {'id': station_id, 'name': station.name, 'latitude': station.latitude, 'longitude': station.longitude, 'racks_count': station.racks_count, 'bikes': station.bikes}},
+                                       upsert=True)

@@ -4,10 +4,9 @@ import json
 from server.web.http_responses import respond
 
 
-
 def all():
     client = MongoClient()
-    db = client.nbapi
+    db = pymongo.database.Database(client, 'bikeathand')
     cursor = db.stations.find()
-    stations = json.loads([json_util.dumps(station) for station in cursor])
+    stations = json.loads(json_util.dumps(cursor))
     return respond(200, stations=stations)
