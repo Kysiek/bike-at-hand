@@ -1,6 +1,6 @@
 from config.constants import LOGGED_HTML_CONTENT, NB_API_LOGIN_ACTION, NB_API_LOGIN_LOGIN, NB_API_LOGIN_USERNAME, NB_API_LOGIN_PASSWORD, API_COOKIE_NAME
-from api.account.session import start_session
 from web.http_requests import post
+from api.account.session import MongoSession
 from parser.html_data import is_logged
 
 
