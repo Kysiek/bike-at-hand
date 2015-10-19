@@ -3,6 +3,11 @@ API_URL = 'https://nextbike.net/pl/m/home'
 STATIONS_URL = 'http://nextbike.net/maps/nextbike-live.xml?city=148'
 STATIONS_INTERVAL = 60
 
+DB_HOST = '127.0.0.1'
+DB_PORT = 27017
+DB_NAME = 'bikeathand'
+DB_SESSIONS = 'sessions'
+
 # Nextbike API session key name
 API_COOKIE_NAME = 'parameters[dlkey]'
 
