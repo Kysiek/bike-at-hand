@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
-from nbapi.config.constants import CITIES_COUNTRY, CITIES_CITY, CITIES_PLACE, XML_STATION_ID, XML_STATION_LAT, XML_STATION_LNG, XML_STATION_NAME, XML_STATION_RACKS, XML_STATION_BIKES_COUNT, XML_STATION_BIKES
+from server.config.constants import CITIES_COUNTRY, CITIES_CITY, CITIES_PLACE, XML_STATION_ID, XML_STATION_LAT, XML_STATION_LNG, XML_STATION_NAME, XML_STATION_RACKS, XML_STATION_BIKES_COUNT, XML_STATION_BIKES
 
-from nbapi.entities.station import Station
+from server.entities.station import Station
 
 
 def get_stations(stations_xml):

@@ -1,7 +1,7 @@
-from nbapi.api.account.session import clear_session, is_authenticated
-from nbapi.config.constants import ACCOUNT_LOGIN_USERNAME, ACCOUNT_LOGIN_PASSWORD, SESSION_AUTH_TOKEN
-from nbapi.api.account.login import login_to_api
-from nbapi.web.http_responses import respond
+from server.api.account.session import clear_session, is_authenticated
+from server.config.constants import ACCOUNT_LOGIN_USERNAME, ACCOUNT_LOGIN_PASSWORD, SESSION_AUTH_TOKEN
+from server.api.account.login import login_to_api
+from server.web.http_responses import respond
 from flask import jsonify, session
 
 

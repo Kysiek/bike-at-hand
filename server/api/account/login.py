@@ -1,7 +1,7 @@
-from nbapi.config.constants import LOGGED_HTML_CONTENT, NB_API_LOGIN_ACTION, NB_API_LOGIN_LOGIN, NB_API_LOGIN_USERNAME, NB_API_LOGIN_PASSWORD, API_COOKIE_NAME
-from nbapi.api.account.session import start_session
-from nbapi.web.http_requests import post
-from nbapi.parser.html_data import is_logged
+from server.config.constants import LOGGED_HTML_CONTENT, NB_API_LOGIN_ACTION, NB_API_LOGIN_LOGIN, NB_API_LOGIN_USERNAME, NB_API_LOGIN_PASSWORD, API_COOKIE_NAME
+from server.api.account.session import start_session
+from server.web.http_requests import post
+from server.parser.html_data import is_logged
 
 
 def login_to_api(username, password):

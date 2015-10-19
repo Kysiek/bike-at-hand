@@ -1,7 +1,7 @@
 from flask import session
-from nbapi.config.constants import SESSION_USERNAME, SESSION_PASSWORD, SESSION_TOKEN, SESSION_AUTH_TOKEN
-from nbapi.parser.html_data import is_logged
-from nbapi.web.http_requests import get
+from server.config.constants import SESSION_USERNAME, SESSION_PASSWORD, SESSION_TOKEN, SESSION_AUTH_TOKEN
+from server.parser.html_data import is_logged
+from server.web.http_requests import get
 import uuid
 
 def start_session(username, password, session_token):

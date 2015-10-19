@@ -1,4 +1,4 @@
-from nbapi.config.constants import LOGGED_HTML_CONTENT
+from server.config.constants import LOGGED_HTML_CONTENT
 from HTMLParser import HTMLParser
 
 

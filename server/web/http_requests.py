@@ -1,5 +1,5 @@
 import requests
-from nbapi.config.constants import API_URL, SESSION_TOKEN, API_COOKIE_NAME
+from server.config.constants import API_URL, SESSION_TOKEN, API_COOKIE_NAME
 from flask import session
 
 

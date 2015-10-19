@@ -1,7 +1,7 @@
 import time
 from threading import Thread
-from nbapi.config.constants import STATIONS_URL, STATIONS_INTERVAL
-from nbapi.parser.xml_data import get_stations
+from server.config.constants import STATIONS_URL, STATIONS_INTERVAL
+from server.parser.xml_data import get_stations
 import requests
 from pymongo import MongoClient
 
@@ -24,6 +24,6 @@ class StationsUpdater(Thread):
             parsed_stations = get_stations(stations_xml.text)
             client = MongoClient('localhost', 27017)
             for station_id, station in parsed_stations.iteritems():
-                client.nbapi.stations.update_one({'id': station_id},
-                                                 {'$set': {'id': station_id, 'name': station.name, 'location': station.location, 'racks_count': station.racks_count, 'bikes': station.bikes}},
-                                                 upsert=True)
+                client.bikeathand.stations.update_one({'id': station_id},
+                                                      {'$set': {'id': station_id, 'name': station.name, 'location': station.location, 'racks_count': station.racks_count, 'bikes': station.bikes}},
+                                                      upsert=True)
