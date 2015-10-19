@@ -1,5 +1,5 @@
 //
-//  MapViewController.h
+//  StationListTableViewCell.h
 //  bike@hand
 //
 //  Created by Krzysztof Maciążek on 18/10/15.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import "Station.h"
 
-@interface MapViewController : UIViewController
-
+@interface StationListTableViewCell : UITableViewCell
+- (void)setLabels:(Station*) station;
 @end

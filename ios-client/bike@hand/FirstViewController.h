@@ -1,5 +1,5 @@
 //
-//  MapViewController.h
+//  FirstViewController.h
 //  bike@hand
 //
 //  Created by Krzysztof Maciążek on 18/10/15.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController
+@interface FirstViewController : UIViewController
+
 
 @end
+

@@ -1,5 +1,5 @@
 //
-//  MapViewController.h
+//  AppDelegate.h
 //  bike@hand
 //
 //  Created by Krzysztof Maciążek on 18/10/15.
@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end
+
