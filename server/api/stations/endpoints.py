@@ -1,11 +1,11 @@
-from pymongo import MongoClient
+import pymongo
 from bson import json_util
 import json
 from web.http_responses import respond
 
 
 def all():
-    client = MongoClient()
+    client = pymongo.MongoClient()
     db = pymongo.database.Database(client, 'bikeathand')
     cursor = db.stations.find()
     stations = json.loads(json_util.dumps(cursor))

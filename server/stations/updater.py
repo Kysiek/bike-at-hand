@@ -3,7 +3,7 @@ from threading import Thread
 from config.constants import STATIONS_URL, STATIONS_INTERVAL
 from parser.xml_data import get_stations
 import requests
-from pymongo import MongoClient
+import pymongo
 
 
 class StationsUpdater(Thread):
@@ -22,7 +22,7 @@ class StationsUpdater(Thread):
         stations_xml = requests.get(STATIONS_URL)
         if stations_xml.status_code == 200:
             parsed_stations = get_stations(stations_xml.text)
-            client = MongoClient('localhost', 27017)
+            client = pymongo.MongoClient('localhost', 27017)
             db = pymongo.database.Database(client, 'bikeathand')
             for station_id, station in parsed_stations.iteritems():
                 db.stations.update_one({'id': station_id},
