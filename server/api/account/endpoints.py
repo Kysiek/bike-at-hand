@@ -9,7 +9,7 @@ def login(request):
     username = data[ACCOUNT_LOGIN_USERNAME]
     password = data[ACCOUNT_LOGIN_PASSWORD]
 
-    token = login_to_api(username, password):
+    token = login_to_api(username, password)
     
     if token:
         return respond(200, auth_token=token)
