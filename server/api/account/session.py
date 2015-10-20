@@ -23,7 +23,7 @@ class MongoSession:
                 self.cookie = session['cookie']
                 self.token = token
 
-                if self.is_authenticated_api(self.cookie):
+                if self.is_authenticated_api():
                     self.authenticated = True
                 else:
                     self.cookie = login_to_api(self.username, self.password)
