@@ -5,9 +5,12 @@ from web.http_responses import respond
 
 
 def login(request):
+    print request
     data = request.get_json()
+    print "request"
     username = data[ACCOUNT_LOGIN_USERNAME]
     password = data[ACCOUNT_LOGIN_PASSWORD]
+    print username + "::::" + password
     token = MongoSession(username=username, password=password).get_token()
     if token:
         return respond(200, auth_token=token)

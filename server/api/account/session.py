@@ -13,7 +13,7 @@ class MongoSession:
         self.store = MongoClient(host=DB_HOST, port=DB_PORT)[DB_NAME][DB_SESSIONS]
         self.authenticated = False
         self.token = None
-
+        print "alamakota"
         if token:
             session = self.store.find_one({'token': token})
             self.store.update_one({'token': token}, {'$set': {'created': datetime.now()}})
