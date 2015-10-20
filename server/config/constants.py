@@ -11,10 +11,7 @@ DB_SESSIONS = 'sessions'
 # Nextbike API session key name
 API_COOKIE_NAME = 'parameters[dlkey]'
 
-# Session keys
-SESSION_USERNAME = 'mobile'
-SESSION_PASSWORD = 'password'
-SESSION_TOKEN = 'session_token'
+# Session
 SESSION_AUTH_TOKEN = 'auth_token'
 
 # HTML parser

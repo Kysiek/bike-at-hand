@@ -5,8 +5,7 @@ from parsers.html_data import is_logged
 
 
 def login_to_api(username, password):
-    response = post({NB_API_LOGIN_ACTION: NB_API_LOGIN_LOGIN, NB_API_LOGIN_USERNAME: username, NB_API_LOGIN_PASSWORD: password}, authorized=False)
+    response = post({NB_API_LOGIN_ACTION: NB_API_LOGIN_LOGIN, NB_API_LOGIN_USERNAME: username, NB_API_LOGIN_PASSWORD: password})
     if is_logged(response.text):
-        token = MongoSession(username=username, password=password).get_token()
-        return token
+        return response.cookies[API_COOKIE_NAME]
     return None

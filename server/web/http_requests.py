@@ -1,17 +1,13 @@
 import requests
-from config.constants import API_URL, SESSION_TOKEN, API_COOKIE_NAME
-from flask import session
+from config.constants import API_URL, API_COOKIE_NAME
 
 
-def get_session_cookie():
-    return {SESSION_COOKIE_NAME: session[SESSION_TOKEN]}
-
-def get(authorized=True):
-    if authorized:
-        return requests.get(API_URL, cookies=get_session_cookie())
+def get(cookie=None):
+    if cookie:
+        return requests.get(API_URL, cookies={API_COOKIE_NAME: cookie})
     return requests.get(API_URL)
         
-def post(content, authorized=True):
-    if authorized:
-        return requests.post(API_URL, content, cookies=get_session_cookie())
+def post(content, cookie=None):
+    if cookie:
+        return requests.post(API_URL, content, cookies={API_COOKIE_NAME: cookie})
     return requests.post(API_URL, content)
