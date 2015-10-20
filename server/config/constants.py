@@ -40,3 +40,21 @@ NB_API_LOGIN_PASSWORD = 'pin'
 # RentBike API
 ACCOUNT_LOGIN_USERNAME = 'user'
 ACCOUNT_LOGIN_PASSWORD = 'pass'
+
+# Account history API
+HISTORY_URL = 'https://nextbike.net/pl/m/account'
+HISTORY_HTML_CONTENT = 'data-role="list-divider"'
+
+# Account history parser - html elements
+UNORDERED_LIST_ELEMENT = 'ul'
+ORDERED_LIST_ELEMENT = 'li'
+SPAN_ELEMENT_ELEMENT = 'span'
+ACCOUNT_HISTORY_LIST_TAG_ATTRIBUTE_KEY = u'data-role'
+ACCOUNT_HISTORY_LIST_TAG_ATTRIBUTE_VALUE = u'listview'
+ACCOUNT_HISTORY_TAG_ATTRIBUTE_KEY = u'data-role'
+ACCOUNT_HISTORY_TAG_ATTRIBUTE_VALUE = u'list-divider'
+ACCOUNT_HISTORY_PRICE_TAG_ATTRIBUTE_KEY = u'class'
+ACCOUNT_HISTORY_PRICE_TAG_ATTRIBUTE_VALUE = u'ui-li-aside'
+
+
+
