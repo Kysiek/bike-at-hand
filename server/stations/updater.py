@@ -1,7 +1,7 @@
 import time
 from threading import Thread
 from config.constants import STATIONS_URL, STATIONS_INTERVAL
-from parser.xml_data import get_stations
+from parsers.xml_data import get_stations
 import requests
 import pymongo
 
