@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StationDetailsViewController.h"
 
-@interface StationListViewController : UIViewController<UITableViewDelegate,UISearchBarDelegate>
+@interface StationListViewController : UIViewController<UITableViewDelegate,UISearchBarDelegate,StationDetailsViewControllerDelegate>
 
 @end

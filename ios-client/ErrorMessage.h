@@ -1,6 +1,6 @@
 //
 //  ErrorMessage.h
-//  BikeMe
+//  bike@hand
 //
 //  Created by Krzysztof Maciążek on 26/09/15.
 //  Copyright © 2015 Kysiek. All rights reserved.

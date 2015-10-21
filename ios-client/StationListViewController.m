@@ -25,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
+    
     self.stationService = [StationService getInstance];
     
     //adding observator to the notifications
@@ -63,12 +66,30 @@
     //Removing observer - we need to do it otherwise there will be exception when property would be changed and this instance would not exist
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"stationDetailsSegue"]) {
+        StationDetailsViewController* stationDetailVC = [segue destinationViewController];
+        stationDetailVC.delegate = self;
+        Station* station = nil;
+        StationListTableViewCell* cell = sender;
+        NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+        station = self.stations[indexPath.row];
+        stationDetailVC.station = station;
+    }
+}
+
+
 -(void) reloadTableViewForStations: (NSArray*) stations{
     self.stations = stations;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+#pragma mark - Station details delegate methods
+-(void) didTabExitButtonInStationDetailsController {
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 #pragma mark - Search bar delegate methods
 
@@ -85,7 +106,6 @@
     self.limitedStationsArray = nil;
     [self.tableView reloadData];
 }
-
 #pragma mark - Table view data source
 static NSString* CellID = @"stationCustomCell";
 

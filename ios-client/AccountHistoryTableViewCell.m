@@ -18,7 +18,7 @@
 
 - (void)setLabels:(AccountHistory *)accountHistory {
     self.dateLabel.text = [NSString stringWithFormat:@"%@ %@ - %@",accountHistory.startDayString, accountHistory.timeFrom, accountHistory.timeTo ];
-    self.bikeNumberLabel.text = accountHistory.bikeNumber;
+    self.bikeNumberLabel.text = [NSString stringWithFormat:@"Rower: %@",accountHistory.bikeNumber];
     self.routeLabel.text = [NSString stringWithFormat:@"%@ - %@", accountHistory.stationFrom, accountHistory.stationTo];
 }
 - (void)awakeFromNib {
@@ -28,7 +28,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    // Configure the view for the selected state
+    // Configure the view for the selected state	
 }
 
 @end

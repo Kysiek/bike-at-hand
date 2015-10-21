@@ -22,15 +22,17 @@
 		1149AB8C1BD432F400A4C452 /* bike_handUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149AB8B1BD432F400A4C452 /* bike_handUITests.m */; };
 		1162D4C11BD577D6007CFFFD /* CurrentRentingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162D4C01BD577D6007CFFFD /* CurrentRentingsController.m */; settings = {ASSET_TAGS = (); }; };
 		1162D4C41BD57DDB007CFFFD /* AccountHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162D4C31BD57DDB007CFFFD /* AccountHistoryTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		1178257D1BD5AC760064245C /* ConnectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178257C1BD5AC760064245C /* ConnectionHelper.m */; settings = {ASSET_TAGS = (); }; };
-		117825801BD5ACA30064245C /* StationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178257F1BD5ACA30064245C /* StationService.m */; settings = {ASSET_TAGS = (); }; };
-		117825831BD5AD170064245C /* UserManagementService.m in Sources */ = {isa = PBXBuildFile; fileRef = 117825821BD5AD170064245C /* UserManagementService.m */; settings = {ASSET_TAGS = (); }; };
-		117825861BD5AD620064245C /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 117825851BD5AD620064245C /* LocationService.m */; settings = {ASSET_TAGS = (); }; };
-		117825891BD5AD840064245C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 117825881BD5AD840064245C /* Station.m */; settings = {ASSET_TAGS = (); }; };
-		1178258C1BD5ADA30064245C /* Bike.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178258B1BD5ADA30064245C /* Bike.m */; settings = {ASSET_TAGS = (); }; };
-		1178258F1BD5ADCA0064245C /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178258E1BD5ADCA0064245C /* ErrorMessage.m */; settings = {ASSET_TAGS = (); }; };
-		117825921BD5ADE40064245C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 117825911BD5ADE40064245C /* User.m */; settings = {ASSET_TAGS = (); }; };
-		117825951BD5AE090064245C /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 117825941BD5AE090064245C /* AccountHistory.m */; settings = {ASSET_TAGS = (); }; };
+		11BDDE331BD6DE7A0082E49F /* BikeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDDE321BD6DE7A0082E49F /* BikeTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		11BDDE361BD6DF510082E49F /* StationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3CF1BD80BA400FF37B9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3CE1BD80BA400FF37B9 /* User.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3D21BD80BF400FF37B9 /* Bike.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3D11BD80BF400FF37B9 /* Bike.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3D51BD80C3000FF37B9 /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3D41BD80C3000FF37B9 /* AccountHistory.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3D81BD80C7400FF37B9 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3D71BD80C7400FF37B9 /* Station.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3DB1BD80CA400FF37B9 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3DA1BD80CA400FF37B9 /* LocationService.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3DE1BD80CBE00FF37B9 /* StationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3DD1BD80CBE00FF37B9 /* StationService.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3E11BD80CDE00FF37B9 /* UserManagementService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3E01BD80CDE00FF37B9 /* UserManagementService.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3E41BD80CFF00FF37B9 /* ConnectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3E31BD80CFF00FF37B9 /* ConnectionHelper.m */; settings = {ASSET_TAGS = (); }; };
+		11EAF3E71BD80D2D00FF37B9 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EAF3E61BD80D2D00FF37B9 /* ErrorMessage.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,24 +83,28 @@
 		1162D4C01BD577D6007CFFFD /* CurrentRentingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRentingsController.m; sourceTree = "<group>"; };
 		1162D4C21BD57DDB007CFFFD /* AccountHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountHistoryTableViewCell.h; sourceTree = "<group>"; };
 		1162D4C31BD57DDB007CFFFD /* AccountHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountHistoryTableViewCell.m; sourceTree = "<group>"; };
-		1178257B1BD5AC760064245C /* ConnectionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionHelper.h; path = "../../Xcode/bike@hand/ConnectionHelper.h"; sourceTree = "<group>"; };
-		1178257C1BD5AC760064245C /* ConnectionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionHelper.m; path = "../../Xcode/bike@hand/ConnectionHelper.m"; sourceTree = "<group>"; };
-		1178257E1BD5ACA30064245C /* StationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationService.h; path = "../../Xcode/bike@hand/StationService.h"; sourceTree = "<group>"; };
-		1178257F1BD5ACA30064245C /* StationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationService.m; path = "../../Xcode/bike@hand/StationService.m"; sourceTree = "<group>"; };
-		117825811BD5AD170064245C /* UserManagementService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManagementService.h; path = "../../Xcode/bike@hand/UserManagementService.h"; sourceTree = "<group>"; };
-		117825821BD5AD170064245C /* UserManagementService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManagementService.m; path = "../../Xcode/bike@hand/UserManagementService.m"; sourceTree = "<group>"; };
-		117825841BD5AD620064245C /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationService.h; path = "../../Xcode/bike@hand/LocationService.h"; sourceTree = "<group>"; };
-		117825851BD5AD620064245C /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationService.m; path = "../../Xcode/bike@hand/LocationService.m"; sourceTree = "<group>"; };
-		117825871BD5AD840064245C /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Station.h; path = "../../Xcode/bike@hand/Station.h"; sourceTree = "<group>"; };
-		117825881BD5AD840064245C /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Station.m; path = "../../Xcode/bike@hand/Station.m"; sourceTree = "<group>"; };
-		1178258A1BD5ADA30064245C /* Bike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bike.h; path = "../../Xcode/bike@hand/Bike.h"; sourceTree = "<group>"; };
-		1178258B1BD5ADA30064245C /* Bike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bike.m; path = "../../Xcode/bike@hand/Bike.m"; sourceTree = "<group>"; };
-		1178258D1BD5ADCA0064245C /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorMessage.h; path = "../../Xcode/bike@hand/ErrorMessage.h"; sourceTree = "<group>"; };
-		1178258E1BD5ADCA0064245C /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorMessage.m; path = "../../Xcode/bike@hand/ErrorMessage.m"; sourceTree = "<group>"; };
-		117825901BD5ADE40064245C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = "../../Xcode/bike@hand/User.h"; sourceTree = "<group>"; };
-		117825911BD5ADE40064245C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = "../../Xcode/bike@hand/User.m"; sourceTree = "<group>"; };
-		117825931BD5AE090064245C /* AccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountHistory.h; path = "../../Xcode/bike@hand/AccountHistory.h"; sourceTree = "<group>"; };
-		117825941BD5AE090064245C /* AccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountHistory.m; path = "../../Xcode/bike@hand/AccountHistory.m"; sourceTree = "<group>"; };
+		11BDDE311BD6DE7A0082E49F /* BikeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeTableViewCell.h; sourceTree = "<group>"; };
+		11BDDE321BD6DE7A0082E49F /* BikeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeTableViewCell.m; sourceTree = "<group>"; };
+		11BDDE341BD6DF510082E49F /* StationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationDetailsViewController.h; sourceTree = "<group>"; };
+		11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationDetailsViewController.m; sourceTree = "<group>"; };
+		11EAF3CD1BD80BA400FF37B9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = "../../../Documents/projects/Xcode/bike@hand/User.h"; sourceTree = "<group>"; };
+		11EAF3CE1BD80BA400FF37B9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = "../../../Documents/projects/Xcode/bike@hand/User.m"; sourceTree = "<group>"; };
+		11EAF3D01BD80BF400FF37B9 /* Bike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bike.h; path = "../../../Documents/projects/Xcode/bike@hand/Bike.h"; sourceTree = "<group>"; };
+		11EAF3D11BD80BF400FF37B9 /* Bike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bike.m; path = "../../../Documents/projects/Xcode/bike@hand/Bike.m"; sourceTree = "<group>"; };
+		11EAF3D31BD80C3000FF37B9 /* AccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountHistory.h; path = "../../../Documents/projects/Xcode/bike@hand/AccountHistory.h"; sourceTree = "<group>"; };
+		11EAF3D41BD80C3000FF37B9 /* AccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountHistory.m; path = "../../../Documents/projects/Xcode/bike@hand/AccountHistory.m"; sourceTree = "<group>"; };
+		11EAF3D61BD80C7400FF37B9 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Station.h; path = "../../../Documents/projects/Xcode/bike@hand/Station.h"; sourceTree = "<group>"; };
+		11EAF3D71BD80C7400FF37B9 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Station.m; path = "../../../Documents/projects/Xcode/bike@hand/Station.m"; sourceTree = "<group>"; };
+		11EAF3D91BD80CA400FF37B9 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationService.h; path = "../../../Documents/projects/Xcode/bike@hand/LocationService.h"; sourceTree = "<group>"; };
+		11EAF3DA1BD80CA400FF37B9 /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationService.m; path = "../../../Documents/projects/Xcode/bike@hand/LocationService.m"; sourceTree = "<group>"; };
+		11EAF3DC1BD80CBE00FF37B9 /* StationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationService.h; path = "../../../Documents/projects/Xcode/bike@hand/StationService.h"; sourceTree = "<group>"; };
+		11EAF3DD1BD80CBE00FF37B9 /* StationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationService.m; path = "../../../Documents/projects/Xcode/bike@hand/StationService.m"; sourceTree = "<group>"; };
+		11EAF3DF1BD80CDE00FF37B9 /* UserManagementService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManagementService.h; path = "../../../Documents/projects/Xcode/bike@hand/UserManagementService.h"; sourceTree = "<group>"; };
+		11EAF3E01BD80CDE00FF37B9 /* UserManagementService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManagementService.m; path = "../../../Documents/projects/Xcode/bike@hand/UserManagementService.m"; sourceTree = "<group>"; };
+		11EAF3E21BD80CFF00FF37B9 /* ConnectionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionHelper.h; path = "../../../Documents/projects/Xcode/bike@hand/ConnectionHelper.h"; sourceTree = "<group>"; };
+		11EAF3E31BD80CFF00FF37B9 /* ConnectionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionHelper.m; path = "../../../Documents/projects/Xcode/bike@hand/ConnectionHelper.m"; sourceTree = "<group>"; };
+		11EAF3E51BD80D2D00FF37B9 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorMessage.h; path = "../../../Documents/projects/Xcode/bike@hand/ErrorMessage.h"; sourceTree = "<group>"; };
+		11EAF3E61BD80D2D00FF37B9 /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorMessage.m; path = "../../../Documents/projects/Xcode/bike@hand/ErrorMessage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,16 +135,16 @@
 		113D15D21BD4352500CDBF07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				117825871BD5AD840064245C /* Station.h */,
-				117825881BD5AD840064245C /* Station.m */,
-				1178258A1BD5ADA30064245C /* Bike.h */,
-				1178258B1BD5ADA30064245C /* Bike.m */,
-				1178258D1BD5ADCA0064245C /* ErrorMessage.h */,
-				1178258E1BD5ADCA0064245C /* ErrorMessage.m */,
-				117825901BD5ADE40064245C /* User.h */,
-				117825911BD5ADE40064245C /* User.m */,
-				117825931BD5AE090064245C /* AccountHistory.h */,
-				117825941BD5AE090064245C /* AccountHistory.m */,
+				11EAF3CD1BD80BA400FF37B9 /* User.h */,
+				11EAF3CE1BD80BA400FF37B9 /* User.m */,
+				11EAF3D01BD80BF400FF37B9 /* Bike.h */,
+				11EAF3D11BD80BF400FF37B9 /* Bike.m */,
+				11EAF3D31BD80C3000FF37B9 /* AccountHistory.h */,
+				11EAF3D41BD80C3000FF37B9 /* AccountHistory.m */,
+				11EAF3D61BD80C7400FF37B9 /* Station.h */,
+				11EAF3D71BD80C7400FF37B9 /* Station.m */,
+				11EAF3E51BD80D2D00FF37B9 /* ErrorMessage.h */,
+				11EAF3E61BD80D2D00FF37B9 /* ErrorMessage.m */,
 			);
 			name = Models;
 			path = ../BikeMe;
@@ -147,14 +153,14 @@
 		113D15E01BD4354600CDBF07 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1178257B1BD5AC760064245C /* ConnectionHelper.h */,
-				1178257C1BD5AC760064245C /* ConnectionHelper.m */,
-				1178257E1BD5ACA30064245C /* StationService.h */,
-				1178257F1BD5ACA30064245C /* StationService.m */,
-				117825811BD5AD170064245C /* UserManagementService.h */,
-				117825821BD5AD170064245C /* UserManagementService.m */,
-				117825841BD5AD620064245C /* LocationService.h */,
-				117825851BD5AD620064245C /* LocationService.m */,
+				11EAF3D91BD80CA400FF37B9 /* LocationService.h */,
+				11EAF3DA1BD80CA400FF37B9 /* LocationService.m */,
+				11EAF3DC1BD80CBE00FF37B9 /* StationService.h */,
+				11EAF3DD1BD80CBE00FF37B9 /* StationService.m */,
+				11EAF3DF1BD80CDE00FF37B9 /* UserManagementService.h */,
+				11EAF3E01BD80CDE00FF37B9 /* UserManagementService.m */,
+				11EAF3E21BD80CFF00FF37B9 /* ConnectionHelper.h */,
+				11EAF3E31BD80CFF00FF37B9 /* ConnectionHelper.m */,
 			);
 			name = Utilities;
 			path = ../BikeMe;
@@ -173,6 +179,8 @@
 				110D2E471BD56DCC00F6FEF9 /* SignInViewController.m */,
 				1162D4BF1BD577D6007CFFFD /* CurrentRentingsController.h */,
 				1162D4C01BD577D6007CFFFD /* CurrentRentingsController.m */,
+				11BDDE341BD6DF510082E49F /* StationDetailsViewController.h */,
+				11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +192,8 @@
 				113D15EE1BD4386600CDBF07 /* StationListTableViewCell.m */,
 				1162D4C21BD57DDB007CFFFD /* AccountHistoryTableViewCell.h */,
 				1162D4C31BD57DDB007CFFFD /* AccountHistoryTableViewCell.m */,
+				11BDDE311BD6DE7A0082E49F /* BikeTableViewCell.h */,
+				11BDDE321BD6DE7A0082E49F /* BikeTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -387,25 +397,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117825861BD5AD620064245C /* LocationService.m in Sources */,
+				11EAF3DE1BD80CBE00FF37B9 /* StationService.m in Sources */,
+				11BDDE331BD6DE7A0082E49F /* BikeTableViewCell.m in Sources */,
 				113D15E71BD4356100CDBF07 /* Configuration.m in Sources */,
-				117825921BD5ADE40064245C /* User.m in Sources */,
-				117825801BD5ACA30064245C /* StationService.m in Sources */,
 				1162D4C11BD577D6007CFFFD /* CurrentRentingsController.m in Sources */,
+				11BDDE361BD6DF510082E49F /* StationDetailsViewController.m in Sources */,
+				11EAF3DB1BD80CA400FF37B9 /* LocationService.m in Sources */,
 				110D2E481BD56DCC00F6FEF9 /* SignInViewController.m in Sources */,
+				11EAF3D81BD80C7400FF37B9 /* Station.m in Sources */,
 				1162D4C41BD57DDB007CFFFD /* AccountHistoryTableViewCell.m in Sources */,
+				11EAF3CF1BD80BA400FF37B9 /* User.m in Sources */,
 				113D15EF1BD4386600CDBF07 /* StationListTableViewCell.m in Sources */,
 				113D15EC1BD4382B00CDBF07 /* StationListViewController.m in Sources */,
 				113D15F81BD4484100CDBF07 /* AccountHistoryViewController.m in Sources */,
+				11EAF3E71BD80D2D00FF37B9 /* ErrorMessage.m in Sources */,
 				1149AB681BD432F400A4C452 /* AppDelegate.m in Sources */,
-				117825951BD5AE090064245C /* AccountHistory.m in Sources */,
-				117825831BD5AD170064245C /* UserManagementService.m in Sources */,
-				117825891BD5AD840064245C /* Station.m in Sources */,
-				1178258C1BD5ADA30064245C /* Bike.m in Sources */,
 				1149AB651BD432F400A4C452 /* main.m in Sources */,
-				1178258F1BD5ADCA0064245C /* ErrorMessage.m in Sources */,
-				1178257D1BD5AC760064245C /* ConnectionHelper.m in Sources */,
+				11EAF3E41BD80CFF00FF37B9 /* ConnectionHelper.m in Sources */,
+				11EAF3E11BD80CDE00FF37B9 /* UserManagementService.m in Sources */,
 				113D15F51BD4457B00CDBF07 /* MapViewController.m in Sources */,
+				11EAF3D51BD80C3000FF37B9 /* AccountHistory.m in Sources */,
+				11EAF3D21BD80BF400FF37B9 /* Bike.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
