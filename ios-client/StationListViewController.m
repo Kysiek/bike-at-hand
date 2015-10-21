@@ -78,6 +78,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"stationDetailsSegue"]) {
+        [self.searchBar resignFirstResponder];
+        
         StationDetailsViewController* stationDetailVC = [segue destinationViewController];
         stationDetailVC.delegate = self;
         Station* station = nil;
