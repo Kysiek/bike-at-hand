@@ -28,13 +28,10 @@
     [super viewDidLoad];
 
     //initializing the refresh controll
-
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
-
-    
-    
     
     
     self.stationService = [StationService getInstance];
@@ -88,6 +85,7 @@
         NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
         station = self.stations[indexPath.row];
         stationDetailVC.station = station;
+        stationDetailVC.hidesBottomBarWhenPushed = YES;
     }
 }
 
@@ -121,6 +119,14 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     self.limitedStationsArray = nil;
     [self.tableView reloadData];
+    [self.searchBar resignFirstResponder];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+}
+#pragma mark - TableViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
 }
 #pragma mark - Table view data source
 static NSString* CellID = @"stationCustomCell";
@@ -171,8 +177,6 @@ static NSString* CellID = @"stationCustomCell";
         CLLocationDegrees longitude = [station.longitude doubleValue];
         CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
         CLLocationDistance distance = [userLocation distanceFromLocation:location];
-        //Storing as string since latitude and longitude is also string values
-        //Since its a dictionary storing as NSNumber is better
         station.distance = [NSNumber numberWithDouble:distance];
     }
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"

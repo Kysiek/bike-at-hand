@@ -21,8 +21,12 @@
     [super viewDidLoad];
     self.stationNameLabel.text = self.station.stationName;
     self.bikesAvailableLabel.text = [NSString stringWithFormat:@"Dostępne rowery: %ld",self.station.bikesAvailable];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStylePlain target:self action:@selector(Back)];
+    self.navigationItem.backBarButtonItem = backButton;
 }
-
+- (IBAction)Back {
+    [self dismissViewControllerAnimated:YES completion:nil]; // ios 6
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

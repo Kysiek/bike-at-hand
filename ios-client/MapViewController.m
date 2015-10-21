@@ -10,6 +10,7 @@
 #import "Station.h"
 #import "Configuration.h"
 #import "StationService.h"
+#import "StationDetailsViewController.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
     [self setMapRegion];
     self.stationService = [StationService getInstance];
     
@@ -43,6 +46,30 @@
 -(void) dealloc {
     //Removing observer - we need to do it otherwise there will be exception when property would be changed and this instance would not exist
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return annotationView;
+}
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"ann.title = %@", view.annotation.title);
+    [self performSegueWithIdentifier:@"showDetailsFromMapSegue" sender:view];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showDetailsFromMapSegue"]) {
+        MKAnnotationView *tappedAnnotation = (MKAnnotationView*) sender;
+        Station *tappedStation = [self.stationService getStationForName:tappedAnnotation.annotation.title];
+        StationDetailsViewController *stationDetailsVC = (StationDetailsViewController*)segue.destinationViewController;
+        stationDetailsVC.hidesBottomBarWhenPushed = YES;
+        stationDetailsVC.station = tappedStation;
+    }
 }
 #pragma mark - Notifications
 - (void) receivedNotification:(NSNotification *) notification {

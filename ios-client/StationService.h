@@ -14,7 +14,7 @@ extern NSString * const StationsErrorNotification;
 
 @interface StationService : NSObject
 + (StationService*) getInstance;
-
+- (Station*)getStationForName:(NSString*)stationName;
 - (void)fetchStations;
 - (NSArray*) getStationsArray;
 - (ErrorMessage*) getErrorMessage;
