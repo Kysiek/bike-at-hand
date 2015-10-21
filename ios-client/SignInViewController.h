@@ -11,11 +11,6 @@
 extern NSString* LoginSuccessNotification;
 extern NSString* LoginFailureNotification;
 
-@protocol SignInViewControllerDelegate;
-@interface SignInViewController : UIViewController
-@property (nonatomic, weak) id<SignInViewControllerDelegate> delegate;
+@interface SignInViewController : UIViewController<UITextFieldDelegate>
 @end
 
-@protocol SignInViewControllerDelegate
-- (void)signInControllerFinished:(NSString *) signInVC;
-@end

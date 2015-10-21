@@ -19,6 +19,7 @@
 @property (nonatomic, strong) LocationService* locationService;
 @property (nonatomic, strong) NSArray* stations;
 @property (nonatomic, strong) NSArray* limitedStationsArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation StationListViewController
@@ -26,6 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //initializing the refresh controll
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+
+    
+    
     
     
     self.stationService = [StationService getInstance];
@@ -46,11 +55,14 @@
     
     self.stations = [self.stationService getStationsArray];
     self.locationService = [LocationService getInstance];
-    [self getUserLocationAndSortCells];
 }
 - (void) receivedNotification:(NSNotification *) notification {
     
     if ([[notification name] isEqualToString:StationsArrivalNotification]) {
+        if([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        [self getUserLocationAndSortCells];
         [self reloadTableViewForStations:[self.stationService getStationsArray]];
     } else if([[notification name] isEqualToString:StationsErrorNotification]) {
         //TODO: On error
@@ -87,6 +99,10 @@
         [self.tableView reloadData];
     });
 }
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self.stationService fetchStations];
+}
+
 #pragma mark - Station details delegate methods
 -(void) didTabExitButtonInStationDetailsController {
     [self dismissViewControllerAnimated:YES completion:NULL];

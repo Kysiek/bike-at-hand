@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SignInViewController.h"
 
-@interface AccountHistoryViewController : UIViewController<SignInViewControllerDelegate,UITableViewDataSource>
+@interface AccountHistoryViewController : UIViewController<UITableViewDataSource>
 
 @end

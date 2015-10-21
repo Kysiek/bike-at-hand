@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SignInViewController.h"
 
-@interface CurrentRentingsController : UIViewController<SignInViewControllerDelegate>
+@interface CurrentRentingsController : UIViewController
 
 @end

@@ -39,7 +39,7 @@ NSString* LoginFailureNotification = @"LoginFailureNotification";
      success: ^(void) {
          dispatch_async(dispatch_get_main_queue(), ^{
              [weakSelf hideWaitUI];
-             [self.delegate signInControllerFinished:LoginSuccessNotification];
+             [weakSelf performSegueWithIdentifier:@"userAuthenticatedSegue" sender:weakSelf];
          });
      }
      failure:^(ErrorMessage *error) {
@@ -57,15 +57,22 @@ NSString* LoginFailureNotification = @"LoginFailureNotification";
          });
      }];
 }
-- (IBAction)didTapBackButton:(id)sender {
-    [self.delegate signInControllerFinished:LoginFailureNotification];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[self view] endEditing:YES];
+}
+#pragma mark - UITextFieldDelegate methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return YES;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 #pragma mark - Helpers
 
 - (void)showWaitUI {

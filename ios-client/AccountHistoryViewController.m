@@ -12,20 +12,28 @@
 #import "UserManagementService.h"
 
 @interface AccountHistoryViewController ()
-@property (weak, nonatomic) IBOutlet UIView *logOutStateView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray* accountHistoryArray;
 @property (nonatomic, strong) UserManagementService* userService;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation AccountHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.userService = [UserManagementService getInstance];
-    if([self.userService isUserSignedId]) {
-        [self startDownloadingAccountHistoryAndShowTable];
-    }
+    [self startDownloadingAccountHistoryAndShowTable];
+    
+    //initializing the refresh controll
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    
+    
+    
     [[NSNotificationCenter defaultCenter]  addObserver:self
                                               selector:@selector(receivedNotification:)
                                                   name:UserHistoryAccountArrived
@@ -39,6 +47,9 @@
 
 - (void)receivedNotification:(NSNotification*) notification {
     if([[notification name] isEqualToString:UserHistoryAccountArrived]) {
+        if([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
         [self reloadTableViewForAccountHistory:[self.userService getAccountHistory]];
     }
 }
@@ -49,6 +60,9 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self startDownloadingAccountHistoryAndShowTable];
 }
 #pragma mark - UITableViewDataSource
 static NSString* CellID = @"accountHistoryCell";
@@ -67,29 +81,11 @@ static NSString* CellID = @"accountHistoryCell";
     }
     return 0;
 }
-#pragma mark - SignInViewControllerDelegate
-
-- (void)signInControllerFinished:(NSString *) signInMessage {
-    if([signInMessage isEqualToString:LoginSuccessNotification]) {
-        [self startDownloadingAccountHistoryAndShowTable];
-    } else {
-        
-    }
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
 #pragma mark - Navigation
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"loginSegue"]) {
-        SignInViewController *authVC = (SignInViewController *)segue.destinationViewController;
-        authVC.delegate = self;
-    }
-}
 
 - (void)startDownloadingAccountHistoryAndShowTable {
-    self.logOutStateView.hidden = YES;
-    self.tableView.hidden = NO;
     [self.userService loadAccountHistory];
 }
 
