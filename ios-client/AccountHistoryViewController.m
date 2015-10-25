@@ -29,7 +29,7 @@
     //initializing the refresh controll
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refreshAccountHistory:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
     
@@ -61,7 +61,7 @@
         [self.tableView reloadData];
     });
 }
-- (void)refresh:(UIRefreshControl *)refreshControl {
+- (void)refreshAccountHistory:(UIRefreshControl *)refreshControl {
     [self startDownloadingAccountHistoryAndShowTable];
 }
 #pragma mark - UITableViewDataSource

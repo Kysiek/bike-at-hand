@@ -1,26 +1,23 @@
 //
 //  User.m
-//  BikeMe
+//  bike@hand
 //
-//  Created by Krzysztof Maciążek on 26/09/15.
+//  Created by Krzysztof Maciążek on 25/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
 #import "User.h"
 
 NSString* const UserPhoneNumberKey = @"username";
-NSString* const UserAuthKeyKey = @"authKey";
+NSString* const UserAuthKeyKey = @"auth_token";
 
 @implementation User
-- (instancetype)initUserWithPhoneNumber:(NSString *)phoneNumber authKey:(NSString *)authKey {
+- (instancetype)initWithDictionary: (NSDictionary *) dictionary {
     if((self = [super init])) {
-        self.phoneNumber = phoneNumber;
-        self.authKey = authKey;
+        self.phoneNumber = dictionary[UserPhoneNumberKey] ? dictionary[UserPhoneNumberKey] : nil;
+        self.authKey = dictionary[UserAuthKeyKey];
     }
     return self;
-}
-- (instancetype)initWithDictionary: (NSDictionary *) dictionary {
-    return [self initUserWithPhoneNumber:dictionary[UserPhoneNumberKey] authKey:dictionary[UserAuthKeyKey]];
 }
 - (NSDictionary*)dictionaryRepresentation {
     return @{

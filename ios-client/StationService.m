@@ -1,14 +1,13 @@
 //
-//  StationManager.m
-//  BikeMe
+//  StationService.m
+//  bike@hand
 //
-//  Created by Krzysztof Maciążek on 21/09/15.
+//  Created by Krzysztof Maciążek on 21/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
 #import "StationService.h"
 #import "ConnectionHelper.h"
-#import "Station.h"
 
 NSString * const StationsArrivalNotification = @"StationsArrivalNotification";
 NSString * const StationsErrorNotification = @"StationsErrorNotification";
@@ -31,19 +30,24 @@ static StationService * stationService;
     }
     return stationService;
 }
-
+const NSString* stationsKey = @"stations";
 -(void) fetchStations {
     __weak typeof(self) weakSelf = self;
     [[ConnectionHelper mainConnectionHelper]
      submitGETPath:@"/stations/all"
      body:nil
-     expectedStatus:254
+     expectedStatus:200
      success:^(NSData *data) {
          NSError *error = nil;
-         NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-         if(result && [result isKindOfClass:[NSArray class]]) {
-             NSMutableArray* stations = [[NSMutableArray alloc] initWithCapacity:result.count];
-             for(NSDictionary* dictionary in result) {
+         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+         
+         if(result &&
+            [result isKindOfClass:[NSDictionary class]] &&
+            [[result objectForKey:stationsKey] isKindOfClass:[NSArray class]]) {
+             
+             NSArray* resultArray = [result objectForKey:stationsKey];
+             NSMutableArray* stations = [[NSMutableArray alloc] initWithCapacity:resultArray.count];
+             for(NSDictionary* dictionary in resultArray) {
                  [stations addObject:[Station stationFromDictionary:dictionary]];
              }
              weakSelf.stationArray = stations;
@@ -51,6 +55,7 @@ static StationService * stationService;
              
              //sending notifications that stations has been downloaded
              [[NSNotificationCenter defaultCenter] postNotificationName:StationsArrivalNotification object:nil];
+             
          } else {
              weakSelf.errorMessage = [[ErrorMessage alloc] initErrorMEssageWithTitle:@"Parsing error" withMessage:@"Cannot parse data. Received format different than expected"];
              
@@ -64,7 +69,16 @@ static StationService * stationService;
          [[NSNotificationCenter defaultCenter] postNotificationName:StationsErrorNotification object:nil];
      }];
 }
-
+-(Station*)getStationForName:(NSString *)stationName {
+    if(self.stationArray) {
+        for(Station *station in self.stationArray) {
+            if([station.stationName isEqualToString:stationName]) {
+                return station;
+            }
+        }
+    }
+    return NULL;
+}
 -(NSArray*) getStationsArray {
     if(self.stationArray == nil) {
         [self fetchStations];

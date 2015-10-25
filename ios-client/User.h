@@ -1,8 +1,8 @@
 //
 //  User.h
-//  BikeMe
+//  bike@hand
 //
-//  Created by Krzysztof Maciążek on 26/09/15.
+//  Created by Krzysztof Maciążek on 25/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ extern NSString* const UserAuthKeyKey;
 @interface User : NSObject
 @property (nonatomic, strong) NSString* phoneNumber;
 @property (nonatomic, strong) NSString* authKey;
-- (instancetype)initUserWithPhoneNumber: (NSString*) phoneNumber authKey:(NSString*)authKey;
 - (instancetype)initWithDictionary: (NSDictionary *) dictionary;
 - (NSDictionary*)dictionaryRepresentation;
 @end

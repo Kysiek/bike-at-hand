@@ -30,7 +30,7 @@
     //initializing the refresh controll
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refreshStationList:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
     
@@ -52,6 +52,10 @@
     
     self.stations = [self.stationService getStationsArray];
     self.locationService = [LocationService getInstance];
+    if(self.stations) {
+        [self getUserLocationAndSortCells];
+    }
+    
 }
 - (void) receivedNotification:(NSNotification *) notification {
     
@@ -60,7 +64,6 @@
             [self.refreshControl endRefreshing];
         }
         [self getUserLocationAndSortCells];
-        [self reloadTableViewForStations:[self.stationService getStationsArray]];
     } else if([[notification name] isEqualToString:StationsErrorNotification]) {
         //TODO: On error
     } else if([[notification name] isEqualToString:LocationArrivalNotification]) {
@@ -85,7 +88,11 @@
         Station* station = nil;
         StationListTableViewCell* cell = sender;
         NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
-        station = self.stations[indexPath.row];
+        if(self.limitedStationsArray) {
+            station = self.limitedStationsArray[indexPath.row];
+        } else {
+            station = self.stations[indexPath.row];
+        }
         stationDetailVC.station = station;
         stationDetailVC.hidesBottomBarWhenPushed = YES;
     }
@@ -99,7 +106,7 @@
         [self.tableView reloadData];
     });
 }
-- (void)refresh:(UIRefreshControl *)refreshControl {
+- (void)refreshStationList:(UIRefreshControl *)refreshControl {
     [self.stationService fetchStations];
 }
 
@@ -111,7 +118,8 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if(searchText && ![searchText isEqualToString:@""]) {
-        self.limitedStationsArray = [self getStationsForSearchPhrase:searchText];
+        
+        self.limitedStationsArray = [Station getStations:self.stations forSearchPhrase:[searchText lowercaseString]];
     } else {
         self.limitedStationsArray = nil;
     }
@@ -162,15 +170,6 @@ static NSString* CellID = @"stationCustomCell";
 }
 
 #pragma mark - Private helpers
-- (NSArray*) getStationsForSearchPhrase:(NSString*) searchPhrase {
-    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
-    for(Station *station in self.stations) {
-        if([station.stationName containsString:searchPhrase]) {
-            [resultArray addObject:station];
-        }
-    }
-    return resultArray;
-}
 
 - (void)sortStations:(CLLocation*)userLocation {
     for (Station *station in self.stations) {

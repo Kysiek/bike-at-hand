@@ -9,11 +9,9 @@
 #import "AppDelegate.h"
 #import "StationService.h"
 #import "LocationService.h"
-#import "UserManagementService.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) StationService* stationService;
-@property (nonatomic, strong) UserManagementService* userManagementService;
 @property (nonatomic, strong) LocationService* locationService;
 @end
 
@@ -24,8 +22,6 @@
     // Override point for customization after application launch.
     self.stationService = [StationService getInstance];
     [self.stationService fetchStations];
-    self.userManagementService = [UserManagementService getInstance];
-    [self.userManagementService checkIfUserIsAuthenticated];
     self.locationService = [LocationService getInstance];
     [self.locationService initLocationManager];
     return YES;

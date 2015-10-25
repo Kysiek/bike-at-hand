@@ -16,18 +16,42 @@ NSString* LoginFailureNotification = @"LoginFailureNotification";
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *pinNumberField;
-@property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet UIView *loginInProgressView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 @end
+
+static NSString* signingInProcess = @"Proszę czekać ...";
+static NSString* authenticationCheckingProcess = @"Sprawdzanie czy użytkownik jest zalogowany";
 
 @implementation SignInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[UserManagementService getInstance] checkIfUserIsAuthenticated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedNotification:)
+                                                 name:UserSignedInNotification
+                                               object:nil];
+
     NSString *userIdentifier = [[UserManagementService getInstance] getUserIdentifier];
+    
     if(userIdentifier) {
         self.phoneNumberField.text = userIdentifier;
+    }
+    self.loadingLabel.text = authenticationCheckingProcess;
+    [self showWaitUI];
+}
+- (void) receivedNotification:(NSNotification *) notification {
+    
+    if ([[notification name] isEqualToString:UserSignedInNotification]) {
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf performSegueWithIdentifier:@"userAuthenticatedSegue" sender:weakSelf];
+        });
+    } else if ([[notification name] isEqualToString:UserSignedOutNotification]) {
+        [self hideWaitUI];
+        self.loadingLabel.text = signingInProcess;
     }
 }
 - (IBAction)didTapSignInButton:(id)sender {
@@ -76,12 +100,12 @@ NSString* LoginFailureNotification = @"LoginFailureNotification";
 #pragma mark - Helpers
 
 - (void)showWaitUI {
-    self.signInButton.hidden = YES;
+    self.loginView.hidden = YES;
     self.loginInProgressView.hidden = NO;
 }
 
 - (void)hideWaitUI {
-    self.signInButton.hidden = NO;
+    self.loginView.hidden = NO;
     self.loginInProgressView.hidden = YES;
 }
 

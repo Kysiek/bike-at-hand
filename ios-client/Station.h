@@ -2,7 +2,7 @@
 //  Station.h
 //  bike@hand
 //
-//  Created by Krzysztof Maciążek on 20/09/15.
+//  Created by Krzysztof Maciążek on 21/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSNumber* distance;
 
 +(Station*)stationFromDictionary: (NSDictionary*) dictionary;
++(NSArray*) getStations:(NSArray*)stations forSearchPhrase: (NSString*) searchPhrase;
 -(NSString*)bikesAvailabilityString;
 -(NSInteger)getBikesAvailable;
 -(BOOL)hasAvailableBikes;

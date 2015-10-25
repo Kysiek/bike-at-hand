@@ -13,8 +13,11 @@
 #import "StationDetailsViewController.h"
 
 @interface MapViewController ()
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) StationService* stationService;
+@property (nonatomic, strong) NSArray* stations;
+@property (nonatomic, strong) NSArray* limitedStationsArray;
 @end
 
 @implementation MapViewController
@@ -35,8 +38,8 @@
                                              selector:@selector(receivedNotification:)
                                                  name:StationsErrorNotification
                                                object:nil];
-    
-    [self updateStations:[self.stationService getStationsArray]];
+    self.stations = [self.stationService getStationsArray];
+    [self updateStations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +50,8 @@
     //Removing observer - we need to do it otherwise there will be exception when property would be changed and this instance would not exist
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation {
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
@@ -71,20 +76,42 @@
         stationDetailsVC.station = tappedStation;
     }
 }
+#pragma mark - Search bar delegate methods
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if(searchText && ![searchText isEqualToString:@""]) {
+        self.limitedStationsArray = [Station getStations:[self.stationService getStationsArray] forSearchPhrase:[searchText lowercaseString]];
+    } else {
+        self.limitedStationsArray = nil;
+    }
+    [self updateStations];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.limitedStationsArray = nil;
+    [self updateStations];
+    [self.searchBar resignFirstResponder];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+}
 #pragma mark - Notifications
 - (void) receivedNotification:(NSNotification *) notification {
     
     if ([[notification name] isEqualToString:StationsArrivalNotification]) {
-        [self updateStations:[self.stationService getStationsArray]];
+        self.stations = [self.stationService getStationsArray];
+        [self updateStations];
     } else if([[notification name] isEqualToString:StationsErrorNotification]) {
         //TODO: On error
     }
 }
 #pragma mark - Private helpers
--(void) updateStations:(NSArray*) stations {
-    if(stations) {
-        NSMutableArray* annotationsArray = [[NSMutableArray alloc]initWithCapacity:[stations count]];
-        for(Station* station in stations) {
+-(void) updateStations {
+    NSArray* stationsToDraw = self.limitedStationsArray ? self.limitedStationsArray : self.stations;
+    if(stationsToDraw) {
+        [self removeAllAnnotationsButUserLocation];
+        NSMutableArray* annotationsArray = [[NSMutableArray alloc]initWithCapacity:[stationsToDraw count]];
+        for(Station* station in stationsToDraw) {
             MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
             CLLocationCoordinate2D locationPoint;
             locationPoint.latitude = [station.latitude doubleValue];
@@ -103,7 +130,7 @@
         });
     }
 }
- -(void) setMapRegion {
+-(void) setMapRegion {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
 
@@ -114,6 +141,10 @@
     MKCoordinateSpan span = MKCoordinateSpanMake(0.05f,0.05f);
     MKCoordinateRegion region = {locationPoint, span};
     [self.mapView setRegion:region];
- }
-
+}
+-(void) removeAllAnnotationsButUserLocation {
+    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy];
+    [annotationsToRemove removeObject: self.mapView.userLocation];
+    [self.mapView removeAnnotations: annotationsToRemove];
+}
 @end

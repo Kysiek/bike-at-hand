@@ -1,8 +1,8 @@
 //
 //  ConnectionHelper.m
-//  BikeMe
+//  bike@hand
 //
-//  Created by Krzysztof Maciążek on 20/09/15.
+//  Created by Krzysztof Maciążek on 21/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
@@ -75,18 +75,10 @@ static ConnectionHelper* mainHelper;
 - (NSURL *)URLWithPath:(NSString *)path {
     return [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:rootURL]];
 }
-- (NSData *)formEncodedParameters:(NSDictionary *)parameters {
-    NSMutableArray *pairs = [[NSMutableArray alloc] initWithCapacity:[parameters count]];
+- (NSData *)encodedBody:(NSDictionary *)parameters {
     
-    for(NSString *key in parameters) {
-        [pairs addObject:[NSString stringWithFormat:@"%@=%@",
-                          [key stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
-                          [parameters[key] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]]];
-    }
-    
-    NSString *formBody = [pairs componentsJoinedByString:@"&"];
-    
-    return [formBody dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    return [NSJSONSerialization  dataWithJSONObject:parameters options:0 error:&error];
 }
 - (NSMutableURLRequest *)requestForURL:(NSURL *)URL
                                 method:(NSString *)httpMethod
@@ -94,8 +86,8 @@ static ConnectionHelper* mainHelper;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:httpMethod];
     if (bodyDict) {
-        [request setHTTPBody:[self formEncodedParameters:bodyDict]];
-        [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:[self encodedBody:bodyDict]];
+        [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     return request;

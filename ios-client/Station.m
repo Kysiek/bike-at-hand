@@ -2,7 +2,7 @@
 //  Station.m
 //  bike@hand
 //
-//  Created by Krzysztof Maciążek on 20/09/15.
+//  Created by Krzysztof Maciążek on 21/10/15.
 //  Copyright © 2015 Kysiek. All rights reserved.
 //
 
@@ -11,11 +11,10 @@
 
 @implementation Station
 
-static NSString* stationNameKey = @"stationName";
-static NSString* stationNumberKey = @"stationNumber";
-static NSString* bikesAvailableKey = @"numberOfAvailableBikes";
-static NSString* bikesRacksKey = @"bikeRacks";
-static NSString* bikesKey = @"listOfBikes";
+static NSString* stationNameKey = @"name";
+static NSString* stationNumberKey = @"id";
+static NSString* bikesRacksKey = @"racks_count";
+static NSString* bikesKey = @"bikes";
 static NSString* latitudeKey = @"latitude";
 static NSString* longitudeKey = @"longitude";
 
@@ -29,6 +28,15 @@ static NSString* longitudeKey = @"longitude";
     newStation.bikes = [dictionary valueForKey:bikesKey];
     newStation.bikesAvailable = [newStation.bikes count];
     return newStation;
+}
++(NSArray*) getStations:(NSArray*)stations forSearchPhrase: (NSString*) searchPhrase {
+    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
+    for(Station *station in stations) {
+        if([[station.stationName lowercaseString] containsString:searchPhrase]) {
+            [resultArray addObject:station];
+        }
+    }
+    return resultArray;
 }
 - (BOOL)hasAvailableBikes {
     return self.bikesAvailable > 0;
