@@ -11,4 +11,6 @@
 
 @interface StationListTableViewCell : UITableViewCell
 - (void)setLabels:(Station*) station;
+-(void)markCellWithBikesHighAvailability;
+-(void)markCellWithBikesLowAvailability;
 @end

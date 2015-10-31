@@ -150,12 +150,12 @@ static NSString* CellID = @"stationCustomCell";
         station = self.stations[row];
     }
     StationListTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellID];
-    cell.backgroundColor = [UIColor whiteColor];
+    
     [cell setLabels:station];
-    if([station hasAvailableBikes]) {
-        
+    if([station hasLowAvailability]) {
+        [cell markCellWithBikesLowAvailability];
     } else {
-        
+        [cell markCellWithBikesHighAvailability];
     }
     return cell;
 }

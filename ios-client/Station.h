@@ -25,4 +25,5 @@
 -(NSInteger)getBikesAvailable;
 -(BOOL)hasAvailableBikes;
 -(NSString*)prettifyDistance;
+-(BOOL)hasLowAvailability;
 @end

@@ -28,19 +28,23 @@ static NSString* authenticationCheckingProcess = @"Sprawdzanie czy użytkownik j
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[UserManagementService getInstance] checkIfUserIsAuthenticated];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receivedNotification:)
                                                  name:UserSignedInNotification
                                                object:nil];
-
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedNotification:)
+                                                 name:UserSignedOutNotification
+                                               object:nil];
+    
     NSString *userIdentifier = [[UserManagementService getInstance] getUserIdentifier];
     
     if(userIdentifier) {
         self.phoneNumberField.text = userIdentifier;
     }
-    self.loadingLabel.text = authenticationCheckingProcess;
-    [self showWaitUI];
+    [[UserManagementService getInstance] checkIfUserIsAuthenticated];
 }
 - (void) receivedNotification:(NSNotification *) notification {
     
@@ -50,8 +54,11 @@ static NSString* authenticationCheckingProcess = @"Sprawdzanie czy użytkownik j
             [weakSelf performSegueWithIdentifier:@"userAuthenticatedSegue" sender:weakSelf];
         });
     } else if ([[notification name] isEqualToString:UserSignedOutNotification]) {
-        [self hideWaitUI];
-        self.loadingLabel.text = signingInProcess;
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf hideWaitUI];
+            weakSelf.loadingLabel.text = signingInProcess;
+        });
     }
 }
 - (IBAction)didTapSignInButton:(id)sender {

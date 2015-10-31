@@ -24,6 +24,7 @@
 		1162D4C41BD57DDB007CFFFD /* AccountHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162D4C31BD57DDB007CFFFD /* AccountHistoryTableViewCell.m */; };
 		11BDDE331BD6DE7A0082E49F /* BikeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDDE321BD6DE7A0082E49F /* BikeTableViewCell.m */; };
 		11BDDE361BD6DF510082E49F /* StationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */; };
+		11CEF8761BE13BDB009FE106 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF8751BE13BDB009FE106 /* SettingsTableViewController.m */; };
 		11FD9B181BDCF8F300D2F09A /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD9B0F1BDCF8F300D2F09A /* AccountHistory.m */; };
 		11FD9B191BDCF8F300D2F09A /* Bike.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD9B111BDCF8F300D2F09A /* Bike.m */; };
 		11FD9B1A1BDCF8F300D2F09A /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD9B131BDCF8F300D2F09A /* ErrorMessage.m */; };
@@ -87,6 +88,8 @@
 		11BDDE321BD6DE7A0082E49F /* BikeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeTableViewCell.m; sourceTree = "<group>"; };
 		11BDDE341BD6DF510082E49F /* StationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationDetailsViewController.h; sourceTree = "<group>"; };
 		11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationDetailsViewController.m; sourceTree = "<group>"; };
+		11CEF8741BE13BDB009FE106 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		11CEF8751BE13BDB009FE106 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		11FD9B0E1BDCF8F300D2F09A /* AccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountHistory.h; sourceTree = SOURCE_ROOT; };
 		11FD9B0F1BDCF8F300D2F09A /* AccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountHistory.m; sourceTree = SOURCE_ROOT; };
 		11FD9B101BDCF8F300D2F09A /* Bike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bike.h; sourceTree = SOURCE_ROOT; };
@@ -181,6 +184,8 @@
 				1162D4C01BD577D6007CFFFD /* CurrentRentingsController.m */,
 				11BDDE341BD6DF510082E49F /* StationDetailsViewController.h */,
 				11BDDE351BD6DF510082E49F /* StationDetailsViewController.m */,
+				11CEF8741BE13BDB009FE106 /* SettingsTableViewController.h */,
+				11CEF8751BE13BDB009FE106 /* SettingsTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				11FD9B181BDCF8F300D2F09A /* AccountHistory.m in Sources */,
 				11FD9B251BDCF91800D2F09A /* ConnectionHelper.m in Sources */,
 				1149AB651BD432F400A4C452 /* main.m in Sources */,
+				11CEF8761BE13BDB009FE106 /* SettingsTableViewController.m in Sources */,
 				113D15F51BD4457B00CDBF07 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

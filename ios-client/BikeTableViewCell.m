@@ -20,10 +20,19 @@
     [self.actionButton setTitle:@"Wypożycz" forState:UIControlStateNormal];
 }
 - (IBAction)didTapActionButton:(id)sender {
-    
+    NSString* title = [self.actionButton titleLabel].text;
+    if([title isEqualToString:@"Wypożycz"]) {
+        [self.actionButton setTitle:@"Zwolnij" forState:UIControlStateNormal];
+    } else if ([title isEqualToString:@"Zwolnij"]) {
+        [self.actionButton setTitle:@"Zwróć" forState:UIControlStateNormal];
+    } else if ([title isEqualToString:@"Zwróć"]) {
+       [self.actionButton setTitle:@"Wypożycz" forState:UIControlStateNormal];
+    }
 }
 - (void)awakeFromNib {
-    // Initialization code
+    self.actionButton.layer.borderWidth = 1.0;
+    self.actionButton.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.actionButton.layer.cornerRadius = 4;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

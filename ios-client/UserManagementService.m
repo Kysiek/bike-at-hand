@@ -83,7 +83,7 @@ static UserManagementService * userManagementService;
     [[ConnectionHelper mainConnectionHelper]
      submitPOSTPath:@"/account/logout"
      body:params
-     expectedStatus:250
+     expectedStatus:200
      success:^(NSData *data) {
          self.currentUser = nil;
          [self informThatUserIsSignOut];
@@ -114,6 +114,8 @@ static UserManagementService * userManagementService;
              [weakSelf informThatUserIsNotSignIn];
              [weakSelf persistSignInUserInformation];
          }];
+    } else {
+        [self informThatUserIsNotSignIn];
     }
 }
 const NSString* accountHistoryKey = @"account_history";

@@ -41,6 +41,9 @@ static NSString* longitudeKey = @"longitude";
 - (BOOL)hasAvailableBikes {
     return self.bikesAvailable > 0;
 }
+-(BOOL)hasLowAvailability {
+    return self.bikesAvailable < 3;
+}
 -(NSString*)bikesAvailabilityString {
     return [NSString stringWithFormat:@"%ld rowerów dostępnych",self.bikesAvailable];
 }

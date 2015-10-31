@@ -47,19 +47,22 @@
 
 - (void)receivedNotification:(NSNotification*) notification {
     if([[notification name] isEqualToString:UserHistoryAccountArrived]) {
-        if([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        [self reloadTableViewForAccountHistory:[self.userService getAccountHistory]];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([self.refreshControl isRefreshing]) {
+                [self.refreshControl endRefreshing];
+            }
+            [self reloadTableViewForAccountHistory:[self.userService getAccountHistory]];
+        });
+        
+        
     }
 }
 
 - (void)reloadTableViewForAccountHistory: (NSArray*) accountHistoryArray{
     self.accountHistoryArray = accountHistoryArray;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    [self.tableView reloadData];
 }
 - (void)refreshAccountHistory:(UIRefreshControl *)refreshControl {
     [self startDownloadingAccountHistoryAndShowTable];

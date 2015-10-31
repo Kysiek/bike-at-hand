@@ -8,4 +8,4 @@ router.route(app)
 stations_updater = updater.StationsUpdater()
 stations_updater.start()
 
-app.run(host='127.0.0.1', port=5000)
+app.run(host='127.0.0.1', port=5001)

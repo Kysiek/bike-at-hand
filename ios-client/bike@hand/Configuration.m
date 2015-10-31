@@ -9,7 +9,7 @@
 #import "Configuration.h"
 
 NSString* const rootURL = @"https://mws.ovh";
-//NSString* const rootURL = @"http://localhost:5000";
+//NSString* const rootURL = @"http://localhost:5001";
 NSString* const wroclawCityID = @"148";
 NSString* const wroclawLat = @"51.11";
 NSString* const wroclawLng = @"17.03";
