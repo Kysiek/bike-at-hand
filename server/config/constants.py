@@ -1,3 +1,7 @@
+import os
+
+TEST_ENVIRONMENT = os.environ.get("TEST_ENVIRONMENT", None)
+
 # Nextbike API URL
 API_URL = 'https://nextbike.net/pl/m/home'
 STATIONS_URL = 'http://nextbike.net/maps/nextbike-live.xml?city=148'
@@ -6,6 +10,10 @@ STATIONS_INTERVAL = 60
 DB_HOST = '127.0.0.1'
 DB_PORT = 27017
 DB_NAME = 'bikeathand'
+
+if TEST_ENVIRONMENT:
+    DB_NAME = 'bikeathand_qa'
+
 DB_SESSIONS = 'sessions'
 
 # Nextbike API session key name
