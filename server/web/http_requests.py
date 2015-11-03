@@ -6,7 +6,7 @@ from config.constants import API_URL, API_COOKIE_NAME, SESSION_AUTH_TOKEN, SESSI
 
 def check_session():
     if SESSION_AUTH_TOKEN not in session:
-        return login_to_api(session[SESSION_USERNAME], session[SESSION_PASSWORD]))
+        return login_to_api(session[SESSION_USERNAME], session[SESSION_PASSWORD])
     return True
 
 def get(url=API_URL):
