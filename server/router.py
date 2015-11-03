@@ -1,8 +1,7 @@
 from flask import request
 
-from api.account.endpoints import login, logout, logged, history
-from config.constants import SESSION_AUTH_TOKEN
-from api.stations.endpoints import all
+from api.account.endpoints import *
+from api.stations.endpoints import * 
 from api.decorators import authenticated
 
 
@@ -28,16 +27,16 @@ def route(app):
     @authenticated
     @app.route('/account/logout', methods=['POST'])
     def account_logout():
-        return logout(request)
+        return logout()
 
     @app.route('/account/logged', methods=['POST'])
     def account_logged():
-        return logged(request)
+        return logged()
 
     @authenticated
-    @app.route('/account/history/<%s>' % SESSION_AUTH_TOKEN, methods=['GET'])
-    def account_history(auth_token):
-        return history(auth_token)
+    @app.route('/account/history', methods=['GET'])
+    def account_history():
+        return history()
 
     @app.route('/stations/all')
     def stations_all():

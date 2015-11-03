@@ -1,9 +1,11 @@
-from server import instance
+from flask import Flask
 import router
+from api.account.sessions import MongoSessionInterface
 from stations import updater
 
 
-app = instance.get_app(__name__)
+app = Flask(__name__)
+app.session_interface = MongoSessionInterface()
 router.route(app)
 stations_updater = updater.StationsUpdater()
 stations_updater.start()

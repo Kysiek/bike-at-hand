@@ -15,12 +15,15 @@ if TEST_ENVIRONMENT:
     DB_NAME = 'bikeathand_qa'
 
 DB_SESSIONS = 'sessions'
+DB_STATIONS = 'stations'
 
 # Nextbike API session key name
 API_COOKIE_NAME = 'parameters[dlkey]'
 
 # Session
 SESSION_AUTH_TOKEN = 'auth_token'
+SESSION_USERNAME = 'username'
+SESSION_PASSWORD = 'password'
 
 # HTML parser
 LOGGED_HTML_CONTENT = 'pl/m/logout'
