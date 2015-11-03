@@ -29,4 +29,4 @@ def post(content, url=API_URL):
             session.pop(SESSION_AUTH_TOKEN, None)
             check_session()
             return requests.get(url, cookies={API_COOKIE_NAME: session[SESSION_AUTH_TOKEN]})
-   return requests.post(url, content)
+    return requests.post(url, content)
