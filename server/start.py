@@ -1,6 +1,6 @@
 from flask import Flask
 import router
-from api.account.sessions import MongoSessionInterface
+from api.account.session import MongoSessionInterface
 from stations import updater
 
 
