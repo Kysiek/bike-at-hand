@@ -14,7 +14,7 @@ class MongoSession(CallbackDict, SessionMixin):
     def __init__(self, initial=None, sid=None):
         CallbackDict.__init__(self, initial)
         self.sid = sid
-        self.modified = false
+        self.modified = False
 
 
 class MongoSessionInterface:
