@@ -1,5 +1,6 @@
 from flask import session
 from api.account.history import get_history
+from api.account.login import login_to_api
 from config.constants import ACCOUNT_LOGIN_USERNAME, ACCOUNT_LOGIN_PASSWORD, SESSION_AUTH_TOKEN
 from web.http_responses import respond
 

@@ -17,7 +17,7 @@ class MongoSession(CallbackDict, SessionMixin):
         self.modified = False
 
 
-class MongoSessionInterface:
+class MongoSessionInterface(SessionInterface):
 
     def __init__(self, host=DB_HOST, port=DB_PORT, db=DB_NAME, collection=DB_SESSIONS):
         client = MongoClient(host, port)
