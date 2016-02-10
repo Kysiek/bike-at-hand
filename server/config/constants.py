@@ -48,7 +48,7 @@ NB_API_LOGIN_LOGIN = 'login'
 NB_API_LOGIN_USERNAME = 'mobile'
 NB_API_LOGIN_PASSWORD = 'pin'
 
-# RentBike API
+# bike@hand API
 ACCOUNT_LOGIN_USERNAME = 'user'
 ACCOUNT_LOGIN_PASSWORD = 'pass'
 
