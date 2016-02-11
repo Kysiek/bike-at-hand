@@ -40,4 +40,4 @@ def route(app):
 
     @app.route('/stations/all')
     def stations_all():
-        return all()
+        return get_all()

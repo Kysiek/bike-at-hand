@@ -5,6 +5,7 @@ from stations import updater
 
 
 app = Flask(__name__)
+app.debug = True
 app.session_interface = MongoSessionInterface()
 router.route(app)
 stations_updater = updater.StationsUpdater()

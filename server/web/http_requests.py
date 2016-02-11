@@ -9,6 +9,7 @@ def check_session():
         return login_to_api(session[SESSION_USERNAME], session[SESSION_PASSWORD])
     return True
 
+
 def get(url=API_URL):
     if check_session():
         response = requests.get(url, cookies={API_COOKIE_NAME: session[SESSION_AUTH_TOKEN]})
@@ -19,7 +20,8 @@ def get(url=API_URL):
             check_session()
             return requests.get(url, cookies={API_COOKIE_NAME: session[SESSION_AUTH_TOKEN]})
     return requests.get(url)
-        
+
+
 def post(content, url=API_URL):
     if check_session():
         response = requests.post(url, content, cookies={API_COOKIE_NAME: session[SESSION_AUTH_TOKEN]})

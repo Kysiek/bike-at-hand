@@ -1,7 +1,4 @@
-from config.constants import SESSION_AUTH_TOKEN, DB_HOST, DB_PORT, DB_SESSIONS, DB_NAME
-from parsers.html_data import is_logged
-from api.account.login import login_to_api
-from web.http_requests import get
+from config.constants import DB_HOST, DB_PORT, DB_SESSIONS, DB_NAME
 from uuid import uuid4
 from datetime import datetime, timedelta
 from flask.sessions import SessionInterface, SessionMixin

@@ -3,7 +3,7 @@ from config.constants import SESSION_AUTH_TOKEN
 
 
 def authenticated(func):
-    def func_wrapper(*args):
+    def func_wrapper():
         if SESSION_AUTH_TOKEN in session:
             return func
         return jsonify(), 401

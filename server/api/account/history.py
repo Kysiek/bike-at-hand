@@ -3,10 +3,10 @@ from web.http_requests import get
 from parsers.html_data import NextbikeHistoryParser
 
 
-def get_history(auth_token):
+def get_history():
     response = get(HISTORY_URL)
-    html_body = response.text
+    html_body = response.content
     if HISTORY_HTML_CONTENT in html_body:
         history_parser = NextbikeHistoryParser()
-        return history_parser.get_account_history(response.text)
+        return history_parser.get_account_history(html_body)
     return False
