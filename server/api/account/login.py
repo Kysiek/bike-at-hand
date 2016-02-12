@@ -10,5 +10,6 @@ def login_to_api(username, password):
         session[SESSION_AUTH_TOKEN] = response.cookies[API_COOKIE_NAME]
         session[SESSION_USERNAME] = username
         session[SESSION_PASSWORD] = password
+        session[SESSION_CITY] = 4
         return True
     return False

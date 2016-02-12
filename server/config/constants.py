@@ -24,6 +24,7 @@ API_COOKIE_NAME = 'parameters[dlkey]'
 SESSION_AUTH_TOKEN = 'auth_token'
 SESSION_USERNAME = 'username'
 SESSION_PASSWORD = 'password'
+SESSION_CITY = 'city'
 
 # HTML parser
 LOGGED_HTML_CONTENT = 'pl/m/logout'
@@ -51,6 +52,9 @@ NB_API_LOGIN_PASSWORD = 'pin'
 # bike@hand API
 ACCOUNT_LOGIN_USERNAME = 'user'
 ACCOUNT_LOGIN_PASSWORD = 'pass'
+BIKE_NUMBER = 'bikeNumber'
+STATION_NUMBER = 'stationNumber'
+COMMENT = 'comment'
 
 # Account history API
 HISTORY_URL = 'https://nextbike.net/pl/m/account'
