@@ -21,6 +21,7 @@
 
 +(Station*)stationFromDictionary: (NSDictionary*) dictionary;
 +(NSArray*) getStations:(NSArray*)stations forSearchPhrase: (NSString*) searchPhrase;
++(NSArray*) getNotEmptyStations:(NSArray*)stations;
 -(NSString*)bikesAvailabilityString;
 -(NSInteger)getBikesAvailable;
 -(BOOL)hasAvailableBikes;

@@ -51,7 +51,7 @@
                                                                      
                                                                  }
                                                                  failure:^(ErrorMessage *error) {
-                                                                     UIAlertController *errorLogoutAction = [UIAlertController alertControllerWithTitle:@"Błąd Ń" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
+                                                                     UIAlertController *errorLogoutAction = [UIAlertController alertControllerWithTitle:@"Błąd" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
                                                                      UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                                                                             style:UIAlertActionStyleDefault
                                                                                                                       handler:^(UIAlertAction *action) {}];

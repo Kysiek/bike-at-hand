@@ -57,4 +57,13 @@ static NSString* longitudeKey = @"longitude";
     }
     return [NSString stringWithFormat:@"%ld m",(long)distance];
 }
++(NSArray*) getNotEmptyStations:(NSArray*)stations {
+    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
+    for(Station *station in stations) {
+        if(station.bikes.count != 0) {
+            [resultArray addObject:station];
+        }
+    }
+    return resultArray;
+}
 @end

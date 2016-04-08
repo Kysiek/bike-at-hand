@@ -20,6 +20,9 @@
 @property (nonatomic, strong) NSArray* stations;
 @property (nonatomic, strong) NSArray* limitedStationsArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+@property (nonatomic, strong) UISearchController* searchController;
+
 @end
 
 @implementation StationListViewController
@@ -33,7 +36,7 @@
     [self.refreshControl addTarget:self action:@selector(refreshStationList:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
-    
+    [self initializeSearchController];
     self.stationService = [StationService getInstance];
     
     //adding observator to the notifications
@@ -70,9 +73,14 @@
         [self getUserLocationAndSortCells];
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) initializeSearchController {
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = false;
+    self.searchController.searchBar.scopeButtonTitles = @[@"All stations", @"With bikes"];
+    self.searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.definesPresentationContext = true;
 }
 -(void) dealloc {
     //Removing observer - we need to do it otherwise there will be exception when property would be changed and this instance would not exist
@@ -116,16 +124,20 @@
 }
 #pragma mark - Search bar delegate methods
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    if(searchText && ![searchText isEqualToString:@""]) {
-        
-        self.limitedStationsArray = [Station getStations:self.stations forSearchPhrase:[searchText lowercaseString]];
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    if(selectedScope == 1) {
+        self.limitedStationsArray = [Station getNotEmptyStations:self.limitedStationsArray];
     } else {
-        self.limitedStationsArray = nil;
+        NSString *searchText = [searchBar text];
+        if(searchText && ![searchText isEqualToString:@""]) {
+            
+            self.limitedStationsArray = [Station getStations:self.stations forSearchPhrase:[searchText lowercaseString]];
+        } else {
+            self.limitedStationsArray = nil;
+        }
     }
     [self.tableView reloadData];
 }
-
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     self.limitedStationsArray = nil;
     [self.tableView reloadData];
@@ -134,6 +146,18 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.searchBar resignFirstResponder];
 }
+#pragma mark - Search Results Updating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchText = [self.searchController.searchBar text];
+    if(searchText && ![searchText isEqualToString:@""]) {
+        self.limitedStationsArray = [Station getStations:self.stations forSearchPhrase:[searchText lowercaseString]];
+    } else {
+        self.limitedStationsArray = nil;
+    }
+    [self limitStationsForSelectedScope:[searchController searchBar].selectedScopeButtonIndex];
+    [self.tableView reloadData];
+}
+
 #pragma mark - TableViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.searchBar resignFirstResponder];
@@ -184,6 +208,12 @@ static NSString* CellID = @"stationCustomCell";
                                                                ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
     self.stations = [self.stations sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (void) limitStationsForSelectedScope:(NSInteger) selectedScope {
+    if(selectedScope == 1) {
+        self.limitedStationsArray = [Station getNotEmptyStations:self.limitedStationsArray];
+    }
 }
 
 - (void)getUserLocationAndSortCells {
