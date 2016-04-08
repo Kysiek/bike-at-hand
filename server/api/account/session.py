@@ -1,60 +1,45 @@
-from config.constants import SESSION_AUTH_TOKEN, DB_HOST, DB_PORT, DB_SESSIONS, DB_NAME
-from parsers.html_data import is_logged
-from api.account.login import login_to_api
-from web.http_requests import get
-import uuid
-from datetime import datetime
+from config.constants import DB_HOST, DB_PORT, DB_SESSIONS, DB_NAME
+from uuid import uuid4
+from datetime import datetime, timedelta
+from flask.sessions import SessionInterface, SessionMixin
+from werkzeug.datastructures import CallbackDict
 from pymongo import MongoClient
 
 
-class MongoSession:
+class MongoSession(CallbackDict, SessionMixin):
 
-    def __init__(self, token=None, username=None, password=None, cookie=None):
-        self.store = MongoClient(host=DB_HOST, port=DB_PORT)[DB_NAME][DB_SESSIONS]
-        self.authenticated = False
-        self.token = None
-        print "alamakota"
-        if token:
-            session = self.store.find_one({'token': token})
-            self.store.update_one({'token': token}, {'$set': {'created': datetime.now()}})
-            if session:
-                self.username = session['username']
-                self.password = session['password']
-                self.cookie = session['cookie']
-                self.token = token
+    def __init__(self, initial=None, sid=None):
+        CallbackDict.__init__(self, initial)
+        self.sid = sid
+        self.modified = False
 
-                if self.is_authenticated_api():
-                    self.authenticated = True
-                else:
-                    self.cookie = login_to_api(self.username, self.password)
-                    if self.cookie:
-                        self.store.update_one({'token': self.token}, {'$set': {'cookie': self.cookie}})
-                        self.authenticated = True
-        elif username and password:
-            self.token = uuid.uuid4().hex
-            self.username = username
-            self.password = password
-            self.cookie = login_to_api(self.username, self.password)
-            if self.cookie:
-                self.store.insert_one({'token': self.token, 'username': self.username, 'password': self.password, 'cookie': self.cookie, 'created': datetime.now()})
-                self.authenticated = True
 
-    def is_authenticated_api(self):
-        response = get(self.cookie)
-        return is_logged(response.text)
+class MongoSessionInterface(SessionInterface):
 
-    def get_token(self):
-        return self.token
+    def __init__(self, host=DB_HOST, port=DB_PORT, db=DB_NAME, collection=DB_SESSIONS):
+        client = MongoClient(host, port)
+        self.store = client[db][collection]
 
-    def get_cookie(self):
-        return self.cookie
+    def open_session(self, app, request):
+        sid = request.cookies.get(app.session_cookie_name)
+        if sid:
+            stored_session = self.store.find_one({'sid': sid})
+            if stored_session:
+                if stored_session.get('expiration') > datetime.utcnow():
+                    return MongoSession(initial=stored_session['data'], sid=stored_session['sid'])
+        sid = str(uuid4())
+        return MongoSession(sid=sid)
 
-    def destroy(self):
-        self.store.delete_one({'token': self.token})
-        self.username = ''
-        self.password = ''
-        self.cookie = ''
-        self.token = ''
-
-    def is_authenticated(self):
-        return self.authenticated
+    def save_session(self, app, session, response):
+        domain = self.get_cookie_domain(app)
+        if not session:
+            response.delete_cookie(app.session_cookie_name, domain=domain)
+            return
+        if self.get_expiration_time(app, session):
+            expiration = self.get_expiration_time(app, session)
+        else:
+            expiration = datetime.utcnow() + timedelta(days=14)
+        self.store.update({'sid': session.sid},
+                          {'sid': session.sid, 'data': session, 'expiration': expiration}, True)
+        response.set_cookie(app.session_cookie_name, session.sid, expires=self.get_expiration_time(app, session),
+                            httponly=True, domain=domain)

@@ -1,7 +1,7 @@
 class Station:
 
-    def __init__(self, id, name, latitude, longitude, racks_count, bikes):
-        self.id = id
+    def __init__(self, code, name, latitude, longitude, racks_count, bikes):
+        self.id = code
         self.name = name
         self.latitude = latitude
         self.longitude = longitude

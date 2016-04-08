@@ -15,12 +15,16 @@ if TEST_ENVIRONMENT:
     DB_NAME = 'bikeathand_qa'
 
 DB_SESSIONS = 'sessions'
+DB_STATIONS = 'stations'
 
 # Nextbike API session key name
 API_COOKIE_NAME = 'parameters[dlkey]'
 
 # Session
 SESSION_AUTH_TOKEN = 'auth_token'
+SESSION_USERNAME = 'username'
+SESSION_PASSWORD = 'password'
+SESSION_CITY = 'city'
 
 # HTML parser
 LOGGED_HTML_CONTENT = 'pl/m/logout'
@@ -45,9 +49,12 @@ NB_API_LOGIN_LOGIN = 'login'
 NB_API_LOGIN_USERNAME = 'mobile'
 NB_API_LOGIN_PASSWORD = 'pin'
 
-# RentBike API
+# bike@hand API
 ACCOUNT_LOGIN_USERNAME = 'user'
 ACCOUNT_LOGIN_PASSWORD = 'pass'
+BIKE_NUMBER = 'bikeNumber'
+STATION_NUMBER = 'stationNumber'
+COMMENT = 'comment'
 
 # Account history API
 HISTORY_URL = 'https://nextbike.net/pl/m/account'
